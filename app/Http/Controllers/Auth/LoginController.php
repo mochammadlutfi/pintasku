@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/beranda';
 
     /**
      * Create a new controller instance.
@@ -40,7 +40,7 @@ class LoginController extends Controller
 
     /**
      * Show the login form.
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function showLoginForm()

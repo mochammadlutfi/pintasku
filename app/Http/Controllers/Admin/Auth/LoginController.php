@@ -37,7 +37,7 @@ class LoginController extends Controller
     /**
      * Only guests for "admin" guard are allowed except
      * for logout.
-     * 
+     *
      * @return void
      */
     public function __construct()
@@ -47,7 +47,7 @@ class LoginController extends Controller
 
     /**
      * Show the login form.
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function showLoginForm()
@@ -61,7 +61,7 @@ class LoginController extends Controller
 
     /**
      * Login the admin.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -83,8 +83,7 @@ class LoginController extends Controller
             //Authenticated, redirect to the intended route
             //if available else admin dashboard.
             return redirect()
-                ->intended(route('admin.home'))
-                ->with('status','You are Logged in as Admin!');
+                ->intended(route('admin.beranda'));
         }
 
         //keep track of login attempts from the user.
@@ -96,7 +95,7 @@ class LoginController extends Controller
 
     /**
      * Logout the admin.
-     * 
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function logout()
@@ -109,9 +108,9 @@ class LoginController extends Controller
 
     /**
      * Validate the form data.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
-     * @return 
+     * @return
      */
     private function validator(Request $request)
     {
@@ -132,7 +131,7 @@ class LoginController extends Controller
 
     /**
      * Redirect back after a failed login.
-     * 
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     private function loginFailed(){
@@ -144,7 +143,7 @@ class LoginController extends Controller
 
     /**
      * Username used in ThrottlesLogins trait
-     * 
+     *
      * @return string
      */
     public function username(){

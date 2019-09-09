@@ -1,0 +1,51 @@
+@extends('backend.layouts.master')
+
+@section('content')
+
+<div class="content">
+    <nav class="breadcrumb bg-white push">
+        <a class="breadcrumb-item" href="{{ route('admin.beranda')}}">Beranda</a>
+        <span class="breadcrumb-item active">Client List</span>
+    </nav>
+    <div class="block">
+        <div class="block-header block-header-default">
+            <h3 class="block-title">Client <small>List</small></h3>
+        </div>
+        <div class="block-content">
+            <table id="users_list" class="table table-hover table-striped data-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nama Lengkap</th>
+                        <th>Email</th>
+                        <th>Created at</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+@stop
+
+@push('scripts')
+<script type="text/javascript">
+$(function () {
+
+    var table = $('.data-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('admin.client.list') }}",
+        columns: [
+            {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+            {data: 'name', name: 'name'},
+            {data: 'email', name: 'email'},
+            {data: 'created_at', name: 'created_at'},
+            {data: 'action', name: 'action', orderable: false, searchable: false},
+        ]
+    });
+
+});
+</script>
+@endpush

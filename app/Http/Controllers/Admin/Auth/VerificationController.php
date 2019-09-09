@@ -9,7 +9,7 @@ class VerificationController extends Controller
 {
     /**
      * Create a controller instance.
-     * 
+     *
      * @return void
      */
     public function __construct()
@@ -28,7 +28,7 @@ class VerificationController extends Controller
     public function show(Request $request)
     {
         return $request->user('admin')->hasVerifiedEmail()
-            ? redirect()->route('admin.home')
+            ? redirect()->route('admin.beranda')
             : view('auth.verify',[
                 'resendRoute' => 'admin.verification.resend',
             ]);
@@ -36,7 +36,7 @@ class VerificationController extends Controller
 
     /**
      * Verfy the user email.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -51,26 +51,26 @@ class VerificationController extends Controller
 
         if ($request->user('admin')->hasVerifiedEmail()) {
             return redirect()
-                ->route('admin.home');
+                ->route('admin.beranda');
         }
 
         $request->user('admin')->markEmailAsVerified();
 
         return redirect()
-            ->route('admin.home')
+            ->route('admin.beranda')
             ->with('status','Thank you for verifying your email!');
     }
 
     /**
      * Resend the verification email.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function resend(Request $request)
     {
         if ($request->user('admin')->hasVerifiedEmail()) {
-            return redirect()->route('admin.home');
+            return redirect()->route('admin.beranda');
         }
 
         $request->user('admin')->sendEmailVerificationNotification();
