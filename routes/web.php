@@ -4,7 +4,7 @@
 /* --------------------- Common/User Routes START -------------------------------- */
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/about-us', 'HomeController@about')->name('about');
+Route::get('/about-us', 'AboutController@index')->name('about');
 Route::get('/products', 'ProductController@index')->name('product');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::group(['prefix' => 'services'], function(){

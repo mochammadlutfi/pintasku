@@ -1097,11 +1097,11 @@ a.pricing-btn.blue-btn.homepage-one-all-features-btn.action-btn.slider-links-2 {
   transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
 }
 .slider-single-item {
-    background-image: url(asset/img/bg/1.png);
+    background-image: url(assets/img/bg/1.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #dddddd;
+    background-color: #1A1D6E;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -3516,7 +3516,7 @@ h3.domain-head {
     padding: 120px 0px 130px 0px;
 }
 .power-area {
-    padding: 180px 0px 100px 0px;
+    padding: 180px 0px 10px 0px;
     position: relative;
     z-index: 1;
     z-index: 0;
@@ -4233,10 +4233,10 @@ button.testi-nav-right.slick-arrow {
        FOOTER AREA STYLE
 ------------------------------------------*/
 section.footer-area {
-    background-image: url(asset/img/bg/footer-bg.png);
+    
     background-size: cover;
     background-position: center;
-    background-color: #ddd;
+    background-color:#272f4a;
 }
 .solution-area {
     padding: 35px 0px 35px 0px;
@@ -4245,7 +4245,7 @@ section.footer-area {
 .solution-heading h2 {
     font-size: 24px;
     line-height: 34px;
-    color: #a3b0d7;
+    color: #A3B0D7;
     font-weight: 700;
 }
 
@@ -4664,6 +4664,12 @@ img.breadcrumb-right-img-man {
 }
 .about-heading h2 {
     font-size: 39px;
+    font-weight: 700;
+    line-height: 45px;
+    color: #3a4368;
+}
+.about-heading h3 {
+    font-size: 26px;
     font-weight: 700;
     line-height: 45px;
     color: #3a4368;
@@ -5337,7 +5343,7 @@ ul.nav.nav-tabs li.active a:after {
 
 
 .welcome-area {
-    padding: 120px 0px 180px 0px;
+    padding: 120px 0px 90px 0px;
 }
 .welcome-area .container {
     position: relative;

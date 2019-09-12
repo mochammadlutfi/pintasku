@@ -31,7 +31,7 @@
     <!--[if lt IE 8]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
-          <!-- preloder. -->
+          <!-- preloder. 
   <div class="preloader-wrapper">
     <div class="preloder">
       <div class="shape shape-1"></div>
@@ -39,7 +39,7 @@
       <div class="shape shape-3"></div>
       <div class="shape shape-4"></div>
     </div>
-  </div>
+  </div>-->
     <!-- HEADER TOP -->
     @include('layouts.header')
     <!-- NAVIGATION -->
@@ -53,7 +53,7 @@
       <!--FOOTER AREA -->
       <section class="footer-area">
          <div class="container">
-            <div class="solution-area">
+           <div class="solution-area">
                <div class="container">
                   <div class="row">
                      <div class="col-lg-10 offset-lg-2 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
@@ -90,10 +90,10 @@
             </div>
             <div class="footer-main ">
                <div class="row">
-                  <div class="col-lg-3 col-md-12 col-12">
+                  <div class="col-lg-4 col-md-12 col-12">
                      <div class="footer-single-item">
                         <div class="logo">
-                           <a href="index.html"><img src="assets/img/logo/footer-logo.png" alt="logo"></a>
+                           <a href="index.html"><img src="http://localhost:8000/assets/img/logo/logo2.png" alt="logo"></a>
                         </div>
                         <p>We are Slake 10 years of experience on this field with most talanted  peoples and leaders.</p>
                         <p class="contact-info"><span>Phone:</span><a href="tel:+8801711991383">+0044 545 989 626</a></p>
@@ -101,75 +101,36 @@
                         <p class="contact-info"><span>Address:</span><a href="#">28 Green Tower, Street<br>New York City, USA</a></p>
                      </div>
                   </div>
-                  <div class="col-lg-3 col-md-12 col-12 ">
+                  <div class="col-lg-4 col-md-12 col-12 ">
                      <div class="single-footer margin-left">
                         <h2>Quick Links</h2>
                         <div class="footer-links">
                            <ul>
                               <li><a href="index.html">Support</a></li>
-                              <li><a href="about.html">Affiliate</a></li>
+                             
                               <li><a href="whmcs.html">Search Domain</a></li>
-                              <li><a href="domain.html">My Account</a></li>
+                             
                               <li><a href="#">Support Center</a></li>
                               <li><a href="#">Privacy Policy</a></li>
                            </ul>
                         </div>
                      </div>
                   </div>
-                  <div class="col-lg-3 col-md-12 col-12 ">
+                  <div class="col-lg-4 col-md-12 col-12 ">
                      <div class="single-footer">
                         <h2>Services</h2>
                         <div class="footer-links">
                            <ul>
+                              <li><a href="hosting.html">Web Development</a></li>
+                              <li><a href="#">App Development</a></li>
+                              <li><a href="vps-hosting.html">Domain Registration</a></li>
                               <li><a href="hosting.html">Web Hosting</a></li>
-                              <li><a href="#">Reseller Hosting</a></li>
-                              <li><a href="vps-hosting.html">VPS Hosting</a></li>
-                              <li><a href="hosting.html">Web Hosting</a></li>
-                              <li><a href="#">VPS Hosting</a></li>
-                              <li><a href="vps-hosting.html">Dedicated Server</a></li>
+                              
                            </ul>
                         </div>
                      </div>
                   </div>
-                  <div class="col-lg-3 col-md-12 col-12">
-                     <div class="single-footer ml">
-                        <h2>Recent Post</h2>
-                        <div class="bpws-wrapper footer-sideber">
-                           <div class="footer-single-sideber">
-                              <a href="#"><span>20 Oct. 2019</span></a>
-                              <a href="#">Best Shared Hosting Provider in the World</a>
-                           </div>
-                           <div class="footer-single-sideber">
-                              <a href="#"><span>20 Oct. 2019</span></a>
-                              <a href="#">Best 10 effective Portfolio site for freelancer</a>
-                           </div>
-                           <div class="footer-single-sideber">
-                              <a href="#"><span>20 Oct. 2019</span></a>
-                              <a href="#">Best Shared Hosting Provider in the World</a>
-                           </div>
-                           <div class="footer-single-sideber">
-                              <a href="#"><span>20 Oct. 2019</span></a>
-                              <a href="#">Best Shared Hosting Provider in the World</a>
-                           </div>
-                           <div class="footer-single-sideber">
-                              <a href="#"><span>20 Oct. 2019</span></a>
-                              <a href="#">Best Shared Hosting Provider in the World</a>
-                           </div>
-                           <div class="footer-single-sideber">
-                              <a href="#"><span>20 Oct. 2019</span></a>
-                              <a href="#">Best Shared Hosting Provider in the World</a>
-                           </div>
-                           <div class="footer-single-sideber">
-                              <a href="#"><span>20 Oct. 2019</span></a>
-                              <a href="#">Best Shared Hosting Provider in the World</a>
-                           </div>
-                           <div class="footer-single-sideber">
-                              <a href="#"><span>20 Oct. 2019</span></a>
-                              <a href="#">Best Shared Hosting Provider in the World</a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+               
                </div>
             </div>
             <div class="early-offer">
@@ -181,7 +142,7 @@
                   </div>
                   <div class="col-md-6 col-12 ">
                      <div class="payment-getway text-right">
-                        <img src="asset/img/bg/footer-bottom.png" alt="payment-icon">
+                        <img src="assets/img/bg/footer-bottom.png" alt="payment-icon">
                      </div>
                   </div>
                </div>
@@ -196,8 +157,8 @@
                      <div class="social-links">
                         <a href="#" target="_blank"><span class="ti-facebook"></span></a>
                         <a href="#" target="_blank"><span class="ti-twitter-alt"></span></a>
-                        <a href="#" target="_blank"><span class="ti-pinterest"></span></a>
-                        <a href="#" target="_blank"><span class="ti-google"></span></a>
+                        <a href="#" target="_blank"><span class="ti-instagram"></span></a>
+                        <a href="#" target="_blank"><span class="ti-github"></span></a>
                      </div>
                   </div>
                </div>
