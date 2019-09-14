@@ -25,7 +25,8 @@
                 </div>
                 <div class="domain-checkup-right">
                     <button>
-                        <img src="asset/img/icons/search-icon.png" alt="Search icon">
+                        
+                        <img src="assets/img/icons/search-icon.png" alt="Search icon">
                         Search
                     </button>
                 </div>
@@ -54,7 +55,7 @@
         <div class="col-md-12">
             <div class="section-title ">
                 <h2>Why Choose <span>Slake?</span> </h2>
-                <img src="asset/img/section-shape.png" alt="section-shape">
+                <img src="assets/img/section-shape.png" alt="section-shape">
                 <p>Lorem ipsum dolor sittem ametamngcing elit, per sed do eiusmoad teimpor sittem elit inuning ut sed sittem do eiusmod.</p>
             </div>
         </div>
@@ -62,21 +63,21 @@
     <div class="row">
         <div class="col-md-4 col-12 ">
             <div class="single-blog-1">
-                <img src="asset/img/service/section-icon.png" alt="section-icon">
+                <img src="assets/img/service/data_hosting.png" alt="section-icon">
                 <h2>Free Domain</h2>
                 <p>After you purchase a hosting plan, you need to set up it before you use it to your website.</p>
             </div>
         </div>
         <div class="col-md-4 col-12 ">
             <div class="single-blog-1">
-                <img src="asset/img/service/section-icon-2.png" alt="section-icon">
+                <img src="assets/img/service/customer.png" alt="section-icon">
                 <h2>Control Cpanel</h2>
                 <p>After you purchase a hosting plan, you need to set up it before you use it to your website.</p>
             </div>
         </div>
         <div class="col-md-4 col-12 ">
             <div class="single-blog-1">
-                <img src="asset/img/service/section-icon-3.png" alt="section-icon">
+                <img src="assets/img/service/24jam.png" alt="section-icon">
                 <h2>24/7 Hour Support</h2>
                 <p>After you purchase a hosting plan, you need to set up it before you use it to your website.</p>
             </div>
@@ -85,7 +86,7 @@
 <!-- BLOG-1  END-->
 
 
-<!--PRICING-TABLE -->
+<!--PRICING-TABLE 
 <div class="homepage-2 pricing-table-area">
 <div class="container">
     <div class="row">
@@ -204,8 +205,10 @@
 
 </div>
 </div>
+-->
+
 <section class="power-area">
-    <div class="container">
+    <!--<div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12">
                 <div class="power-left">
@@ -253,7 +256,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 </section>
 
 </div>
@@ -269,75 +272,54 @@
         <div class="col-md-12">
             <div class="section-title ">
                 <h2>Our Best Services</h2>
-                <img src="asset/img/section-shape.png" alt="section-shape">
+                <img src="assets/img/section-shape.png" alt="section-shape">
                 <p>Lorem ipsum dolor sittem ametamngcing elit, per sed do eiusmoad tepor sittemelit inuning ut sed sittem do eiusmod.</p>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-4 col-md-6 col-12 ">
+        <div class="col-lg-6 col-md-6 col-12 ">
             <div class="single-blog-1">
-                <img src="asset/img/service/service-icon.png" alt="section-icon">
-                <h2>Resellers Hosting</h2>
+                <img src="assets/img/service/web_developer.png" alt="section-icon">
+                <h2>Web Development</h2>
                 <p>Lorem ipsum dolor sittem ametam ngcing elit, per sed do eiusmoad tepor inunt ut sedig do eiusmod.</p>
                 <a href="#" class="read-more-btn">read more <i class="ti-arrow-right"></i> </a>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-12 ">
+        <div class="col-lg-6 col-md-6 col-12 ">
             <div class="single-blog-1">
-                <img src="asset/img/service/service-icon-2.png" alt="section-icon">
+                <img src="assets/img/service/mobile_phone.png" alt="section-icon">
+                <h2>App Development</h2>
+                <p>Lorem ipsum dolor sittem ametam ngcing elit, per sed do eiusmoad tepor inunt ut sedig do eiusmod.</p>
+                <a href="#" class="read-more-btn">read more <i class="ti-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 ">
+            <div class="single-blog-1">
+                <img src="assets/img/service/network_1.png" alt="section-icon">
+                <h2>Domain Registration</h2>
+                <p>Lorem ipsum dolor sittem ametam ngcing elit, per sed do eiusmoad tepor inunt ut sedig do eiusmod.</p>
+                <a href="#" class="read-more-btn">read more <i class="ti-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 ">
+            <div class="single-blog-1">
+                <img src="assets/img/service/data_hosting.png" alt="section-icon">
                 <h2>Web Hosting</h2>
                 <p>Lorem ipsum dolor sittem ametam ngcing elit, per sed do eiusmoad tepor inunt ut sedig do eiusmod.</p>
                 <a href="#" class="read-more-btn">read more <i class="ti-arrow-right"></i></a>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-12 ">
-            <div class="single-blog-1">
-                <img src="asset/img/service/service-icon-3.png" alt="section-icon">
-                <h2>Cloud Hosting</h2>
-                <p>Lorem ipsum dolor sittem ametam ngcing elit, per sed do eiusmoad tepor inunt ut sedig do eiusmod.</p>
-                <a href="#" class="read-more-btn">read more <i class="ti-arrow-right"></i></a>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-12 ">
-            <div class="single-blog-1">
-                <img src="asset/img/service/service-icon-4.png" alt="section-icon">
-                <h2>Big Data Transfer</h2>
-                <p>Lorem ipsum dolor sittem ametam ngcing elit, per sed do eiusmoad tepor inunt ut sedig do eiusmod.</p>
-                <a href="#" class="read-more-btn">read more <i class="ti-arrow-right"></i></a>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-12 ">
-            <div class="single-blog-1">
-                <img src="asset/img/service/service-icon-5.png" alt="section-icon">
-                <h2>Domain Sale</h2>
-                <p>Lorem ipsum dolor sittem ametam ngcing elit, per sed do eiusmoad tepor inunt ut sedig do eiusmod.</p>
-                <a href="#" class="read-more-btn">read more <i class="ti-arrow-right"></i></a>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-12 ">
-            <div class="single-blog-1">
-                <img src="asset/img/service/service-icon-6.png" alt="section-icon">
-                <h2>Shared Hosting</h2>
-                <p>Lorem ipsum dolor sittem ametam ngcing elit, per sed do eiusmoad teimpor inunt ut sedig do eiusmod.</p>
-                <a href="#" class="read-more-btn">read more <i class="ti-arrow-right"></i></a>
-            </div>
-        </div>
+        
+        
     </div>
 </section>
 <!-- BLOG-1  END-->
 
 <!--REGISTER-AREA -->
 
-<section class="register-area">
-<div class="clouds">
-    <img src="asset/img/cloud/cloud-6.png" alt="cloud" class="cloud1">
-    <img src="asset/img/cloud/cloud-2.png" alt="cloud" class="cloud3">
-    <img src="asset/img/cloud/cloud-3.png" alt="cloud" class="cloud4">
-    <img src="asset/img/cloud/cloud-4.png" alt="cloud" class="cloud5">
-    <img src="asset/img/cloud/cloud-5.png" alt="cloud" class="cloud2">
-    <img src="asset/img/cloud/cloud-6.png" alt="cloud" class="cloud6">
-</div>
+<section class="register-area" style="background-image:  url({{ asset('assets/img/bg/register.jpg') }});">
+
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
@@ -352,9 +334,10 @@
     </div>
 </div>
 </section>
+
 <!--REGISTER-AREA  END-->
 
-<!--TESTIMONIAL-AREA -->
+<!--TESTIMONIAL-AREA 
 <section class="testimonial-area">
     <div class="container">
     <div class="row">
@@ -505,9 +488,9 @@
         <button class="testi-nav-right"><span class="ti-angle-right"></span></button>
     </div>
     </div>
-</section>
+</section>-->
 <!--TESTIMONIAL-AREA  END-->
-<!--CTA AREA -->
+<!--CTA AREA
 
 <section class="blog-section-area">
 <div class="container">
@@ -661,7 +644,7 @@
         </div>
     </div>
 </div>
-</section>
+</section> -->
 
 
 <!--CTA AREA  END-->
@@ -673,40 +656,53 @@
         <div class="col-lg-12">
             <div class="brand-inner">
                 <div class="owl-carousel all-brand-carsouel">
+                    
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
-                        <img src="asset/img/brand-logo/brand-icon.png" alt="brand-icon">
-                    </div>
-                    </div>
-                    <div class="brand-single-item">
-                    <div class="brand-single-item-cell">
-                        <img src="asset/img/brand-logo/brand-icon-2.png" alt="brand-icon">
+                        <img src="assets/img/brand-logo/vuejs.png" alt="brand-icon">
                     </div>
                     </div>
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
-                        <img src="asset/img/brand-logo/brand-icon-3.png" alt="brand-icon">
+                        <img src="assets/img/brand-logo/angularjs.png" alt="brand-icon">
                     </div>
                     </div>
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
-                        <img src="asset/img/brand-logo/brand-icon-4.png" alt="brand-icon">
+                        <img src="assets/img/brand-logo/nodejs.png" alt="brand-icon">
                     </div>
                     </div>
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
-                        <img src="asset/img/brand-logo/brand-icon-5.png" alt="brand-icon">
+                        <img src="assets/img/brand-logo/flutter.png" alt="brand-icon">
                     </div>
                     </div>
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
-                        <img src="asset/img/brand-logo/brand-icon-3.png" alt="brand-icon">
+                        <img src="assets/img/brand-logo/android.png" alt="brand-icon">
+                    </div>
+                    </div>
+                    <div class="brand-single-item">
+                    <div class="brand-single-item-cell">
+                        <img src="assets/img/brand-logo/redis.png" alt="brand-icon">
+                    </div>
+                    </div>
+                    <div class="brand-single-item">
+                    <div class="brand-single-item-cell">
+                        <img src="assets/img/brand-logo/laravel.png" alt="brand-icon">
+                    </div>
+                    </div>
+                    <div class="brand-single-item">
+                    <div class="brand-single-item-cell">
+                        <img src="assets/img/brand-logo/adonis.png" alt="brand-icon">
                     </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+            
     </div>
 </section>
 @endsection
