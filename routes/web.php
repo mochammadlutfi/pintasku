@@ -1,5 +1,17 @@
 <?php
+Route::get('coba',function(){
+    $list_accounts = CpanelWhm::listpkgs();
 
+    // dd($list_accounts);
+    // return $list_accounts->package['name'];
+    // $list_accounts->package->name;
+    $data = json_decode($list_accounts);
+
+    foreach($data->package as $d)
+    {
+        echo $d->name;
+    }
+});
 
 /* --------------------- Common/User Routes START -------------------------------- */
 
@@ -16,11 +28,10 @@ Route::group(['prefix' => 'services'], function(){
 
 Auth::routes([ 'verify' => true ]);
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/beranda', 'Client\BerandaController@index')->name('beranda')->middleware('verified');
 
 Route::group(['prefix' => '/wilayah'], function () {
     Route::post('/kota', 'WilayahController@get_kota')->name('wilayah.kota');

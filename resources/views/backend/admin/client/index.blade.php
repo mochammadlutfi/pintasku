@@ -16,10 +16,12 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nama Lengkap</th>
-                        <th>Email</th>
-                        <th>Created at</th>
-                        <th>Action</th>
+                        <th>Nama</th>
+                        <th>Alamat Email</th>
+                        <th>Perusahaan</th>
+                        <th>Layanan</th>
+                        <th>Tgl Gabung</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
             </table>
@@ -41,11 +43,19 @@ $(function () {
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'name', name: 'name'},
             {data: 'email', name: 'email'},
-            {data: 'created_at', name: 'created_at'},
-            {data: 'action', name: 'action', orderable: false, searchable: false},
+            {data: 'perusahaan', name: 'perusahaan'},
+            {data: 'layanan', name: 'layanan'},
+            {data: 'tgl', name: 'tgl'},
+            {data: 'status', name: 'status'},
+            // {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
 
 });
+function detail(id) {
+    var url = '{{ route("admin.client.detail", ":id") }}';
+    url = url.replace(':id', id);
+    document.location.href=url;
+}
 </script>
 @endpush

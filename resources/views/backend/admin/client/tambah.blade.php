@@ -121,15 +121,13 @@
         </div>
     </div>
 </div>
-
 @stop
 @push('scripts')
 <script>
 $(document).ready(function(){
-
     $("#form-client").submit(function(e) {
         e.preventDefault();
-        var formData = new FormData($('#form-penyewa')[0]);
+        var formData = new FormData($('#form-client')[0]);
         $.ajax({
             url : "<?= route('admin.client.tambah'); ?>",
             type: 'post',

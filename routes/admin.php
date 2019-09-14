@@ -29,12 +29,6 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
 
     Route::get('/beranda','HomeController@index')->name('beranda')->middleware('guard.verified:admin,admin.verification.notice');
 
-    Route::group(['prefix' => '/wilayah'], function () {
-        Route::post('/kota', 'WilayahController@get_kota')->name('wilayah.kota');
-        Route::post('/kecamatan','WilayahController@get_kecamatan')->name('wilayah.kecamatan');
-        Route::post('/kelurahan','WilayahController@get_kelurahan')->name('wilayah.kelurahan');
-    });
-
     Route::group(['prefix' => 'client'], function(){
         Route::get('/list', 'ClientController@index')->name('client.list');
         Route::get('/detail/{id}', 'ClientController@detail')->name('client.detail');
@@ -43,8 +37,12 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
 
     Route::get('/domains', 'DomainController@index')->name('domain');
 
-    Route::group(['prefix' => 'services'], function(){
-
+    Route::group(['prefix' => 'order'], function(){
+        Route::get('/list','OrderController@index')->name('order');
+        Route::match(['get', 'post'], 'tambah', 'OrderController@tambah')->name('order.tambah');
+        Route::get('/edit/{id}','OrderController@edit')->name('order.edit');
+        Route::post('/update/{id}','OrderController@update')->name('order.update');
+        Route::post('hapus/{id}','OrderController@delete')->name('order.delete');
     });
 
     Route::group(['prefix' => 'product'],function(){
@@ -53,6 +51,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::get('/edit/{id}','ProductController@edit')->name('product.edit');
         Route::post('/update/{id}','ProductController@update')->name('product.update');
         Route::post('hapus/{id}','ProductController@delete')->name('product.delete');
+        Route::post('/product', 'ProductController@get_kota')->name('product.json');
 
         Route::group(['prefix' => 'category'], function(){
             Route::get('/', 'CategoryController@index')->name('category');
@@ -64,19 +63,11 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     });
 
     Route::group(['prefix' => 'domain'],function(){
-        Route::match(['get','post'],'tambah','DomainController@tambah')->name('domain.tambah');
-        Route::get('/list','DomainController@index')->name('domain.list');
-        Route::get('/edit/{id}','DomainController@edit')->name('domain.edit');
-        Route::post('/update/{id}','DomainController@update')->name('domain.update');
-
-        Route::group(['prefix' => 'tld'], function(){
-            Route::get('/', 'TLDsController@index')->name('tld');
-            Route::post('/simpan','TLDsController@simpan')->name('tld.simpan');
-            Route::get('/edit/{id}','TLDsController@edit')->name('tld.edit');
-            Route::post('/update','TLDsController@update')->name('tld.update');
-            Route::get('/hapus/{id}','TLDsController@hapus')->name('tld.hapus');
-        });
-
+        Route::get('/', 'TLDsController@index')->name('tld');
+        Route::post('/simpan','TLDsController@simpan')->name('tld.simpan');
+        Route::get('/edit/{id}','TLDsController@edit')->name('tld.edit');
+        Route::post('/update','TLDsController@update')->name('tld.update');
+        Route::get('/hapus/{id}','TLDsController@hapus')->name('tld.hapus');
     });
 
 });

@@ -6,37 +6,49 @@
         <a class="breadcrumb-item" href="{{ route('admin.beranda') }}">Beranda</a>
         <span class="breadcrumb-item active">Data Produk</span>
     </nav>
-    <div class="row">
-        <div class="col-lg-12">
-            <!-- Default Elements -->
-            <div class="block">
-                <div class="block-header block-header-default">
-                    <h3 class="block-title">Kelola Data Produk</h3>
-                    <a href="{{ route('admin.product.tambah') }}" class="btn btn-secondary mr-5 mb-5 float-right btn-rounded">
-                        <i class="si si-plus mr-5"></i>
-                        Tambah Data Produk Baru
-                    </a>
-                </div>
-                <div class="block-content">
-                    <table class="table table-hover table-striped" id="list-barang" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>Kode</th>
-                                <th>Nama</th>
-                                <th>Satuan</th>
-                                <th>Harga Beli</th>
-                                <th>Harga Jual 1</th>
-                                <th>Harga Jual 2</th>
-                                <th>Harga Jual 3</th>
-                                <th>Sisa Stok</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
+
+    <div class="block">
+        <ul class="nav nav-tabs nav-tabs-alt" data-toggle="tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" href="#web-hosting">Web Hosting</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#web-development">Web Development</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#mobile-development">Mobile Development</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#web-application">Web Application</a>
+            </li>
+        </ul>
+        <div class="block-content tab-content">
+            <div class="tab-pane active" id="web-hosting" role="tabpanel">
+                <table class="table table-hover table-striped" id="list-web_hosting">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nama</th>
+                            <th>Kategori</th>
+                            <th>Tipe Pembayaran</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
-            <!-- END Default Elements -->
+            <div class="tab-pane" id="web-development" role="tabpanel">
+                <h4 class="font-w400">Web Development</h4>
+                <p>...</p>
+            </div>
+            <div class="tab-pane" id="mobile-development" role="tabpanel">
+                <h4 class="font-w400">App Development</h4>
+                <p>...</p>
+            </div>
+            <div class="tab-pane" id="web-application" role="tabpanel">
+                <h4 class="font-w400">Web Application</h4>
+                <p>...</p>
+            </div>
         </div>
     </div>
 </div>
@@ -44,42 +56,116 @@
 @push('scripts')
 <script>
 $(function () {
-    $('#list-barang').DataTable({
+    $('#list-web_hosting').DataTable({
         processing: true,
         serverSide: true,
         ajax: "<?= route('admin.product'); ?>",
         columns: [
             {
-                data: 'kode',
-                name: 'kode'
+                data: 'DT_RowIndex',
+                name: 'DT_RowIndex'
             },
             {
-                data: 'nama',
-                name: 'nama'
+                data: 'name',
+                name: 'name'
             },
             {
-                data: 'satuan',
-                name: 'satuan'
+                data: 'kategori',
+                name: 'kategori'
             },
             {
-                data: 'hrg_beli',
-                name: 'hrg_beli'
+                data: 'pembayaran',
+                name: 'pembayaran'
             },
             {
-                data: 'hrg_1',
-                name: 'hrg_1'
+                data: 'action',
+                name: 'action',
+                orderable: false,
+                searchable: false
+            },
+        ]
+    });
+
+    $('#list-web_dev').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "<?= route('admin.product'); ?>",
+        columns: [
+            {
+                data: 'DT_RowIndex',
+                name: 'DT_RowIndex'
             },
             {
-                data: 'hrg_2',
-                name: 'hrg_2'
+                data: 'name',
+                name: 'name'
             },
             {
-                data: 'hrg_3',
-                name: 'hrg_3'
+                data: 'kategori',
+                name: 'kategori'
             },
             {
-                data: 'jml_stok',
-                name: 'jml_stok'
+                data: 'pembayaran',
+                name: 'pembayaran'
+            },
+            {
+                data: 'action',
+                name: 'action',
+                orderable: false,
+                searchable: false
+            },
+        ]
+    });
+
+    $('#list-mobile_dev').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "<?= route('admin.product'); ?>",
+        columns: [
+            {
+                data: 'DT_RowIndex',
+                name: 'DT_RowIndex'
+            },
+            {
+                data: 'name',
+                name: 'name'
+            },
+            {
+                data: 'kategori',
+                name: 'kategori'
+            },
+            {
+                data: 'pembayaran',
+                name: 'pembayaran'
+            },
+            {
+                data: 'action',
+                name: 'action',
+                orderable: false,
+                searchable: false
+            },
+        ]
+    });
+
+    $('#list-web_app').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "<?= route('admin.product'); ?>",
+        columns: [
+            {
+                data: 'DT_RowIndex',
+                name: 'DT_RowIndex'
+            },
+            {
+                data: 'name',
+                name: 'name'
+            },
+            {
+                data: 'kategori',
+                name: 'kategori'
+            },
+            {
+                data: 'pembayaran',
+                name: 'pembayaran'
             },
             {
                 data: 'action',

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\User;
 use App\Models\Harga;
 use App\Models\Product;
 use App\Models\TLDs;
@@ -11,7 +12,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\DataTables;
 use Storage;
-class ProductController extends Controller
+class OrderController extends Controller
 {
     /**
      * Only Authenticated users for "admin" guard
@@ -70,7 +71,8 @@ class ProductController extends Controller
         if($request->isMethod('get')){
             $domain = TLDs::latest()->get();
             $kategori = Category::where('status', 1)->latest()->get();
-            return view('backend.admin.product.tambah', compact('kategori', 'domain'));
+            $client = User::latest()->get();
+            return view('backend.admin.order.tambah', compact('kategori', 'domain', 'client'));
         }else{
             // dd($request->all());
             $rules = [
@@ -242,18 +244,20 @@ class ProductController extends Controller
         }
     }
 
-    function get_kota(Request $request)
-    {
-        $select = $request->get('select');
-        $value = $request->get('value');
-        $dependent = $request->get('dependent');
-        $data = Product::where('category_id', $value)->get();
-        $output = '<option value="">Pilih Produk</option>';
-        foreach($data as $row)
-        {
-            $output .= '<option value="'.$row->id.'">'.ucwords(strtolower($row->name)).'</option>';
-        }
-        echo $output;
+    public function get_json(Request $request){
+
+        $user = Penyewa::find($request->value);
+
+        $data = array(
+            'nama' => $user->nama,
+            'nik' => $user->nik,
+            'tmp_lahir' => $user->tmp_lahir,
+            'pekerjaan' => $user->pekerjaan,
+            'tgl_lahir' => date('d-m-Y', strtotime($user->tgl_lahir)),
+            'alamat' => $user->alamat.' RT.'. $user->rt.' RW.'.$user->rw.' Desa/Kel. '.$user->kelurahan->nama.' Kec. '.$user->kecamatan->nama.'Kabupaten Bandung Barat',
+        );
+
+        return response()->json($data);
     }
 
 }

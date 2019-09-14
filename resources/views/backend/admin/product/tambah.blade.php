@@ -10,204 +10,196 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <!-- Default Elements -->
             <div class="block">
                 <div class="block-header block-header-default">
                     <h3 class="block-title">Tambah Produk Baru</h3>
                 </div>
                 <div class="block-content pb-15">
-                    <form id="form-barang" method="post" action = "" onsubmit="return false;">
-                        @csrf
-                        <div class="row">
-                            <div class="col-lg-7">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <form id="form-product" method="post" action = "" onsubmit="return false;">
+                                @csrf
                                 <div class="form-group row">
-                                    <label class="col-md-3" for="field-nama">Nama Barang</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" id="field-nama" name="nama" placeholder="Masukan Nama Barang">
+                                    <div class="col-md-12">
+                                        <label for="field-nama">Nama Produk/Layanan</label>
+                                        <input type="text" class="form-control" id="field-nama" name="nama" placeholder="Masukan Nama Produk/Layanan">
                                         <div id="error-nama" class="invalid-feedback"></div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-md-3" for="field-kategori">Kategori</label>
-                                    <div class="col-md-9">
+                                    <label class="col-12" for="field-slug">Slug</label>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" id="field-slug" name="slug" placeholder="Masukan Slug Produk/Layanan">
+                                        <div class="invalid-feedback" id="error-slug">Invalid feedback</div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-12">
+                                        <label for="field-tipe">Tipe Produk</label>
+                                        <select class="form-control" name="tipe" id="field-tipe">
+                                            <option value="">Pilih</option>
+                                            <option value="hosting">Web Hosting</option>
+                                            <option value="webdev">Web Development</option>
+                                            <option value="appdev">App Development</option>
+                                            <option value="webapp">Web Application</option>
+                                        </select>
+                                        <div class="invalid-feedback" id="error-tipe">Invalid feedback</div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <label for="field-kategori">Kategori</label>
                                         <div class="row">
-                                            <div class="col-md-9">
+                                            <div class="col-md-12">
                                                 <select class="js-select2 form-control" id="field-kategori" name="kategori" style="width: 100%;" data-placeholder="Pilih Kategori">
                                                     <option></option>
                                                     @foreach($kategori as $k)
-                                                        @if(Session::has('new_kategori'))
-                                                            <option value="{{ $k->kategori_id }}" <?php if(Session::get('new_kategori') == $k->kategori_id){ echo 'selected="selected"'; } ?>>{{ $k->nama }}</option>
-                                                        @else
-                                                        <option value="{{ $k->kategori_id }}">{{ $k->nama }}</option>
-                                                        @endif
+                                                        <option value="{{ $k->id }}">{{ $k->name }}</option>
                                                     @endforeach
                                                 </select>
                                                 <div id="error-kategori" class="invalid-feedback"></div>
                                             </div>
-                                            <div class="col-md-3">
-                                                <button type="button" id="tmb_kategori" class="btn btn-alt-primary btn-block"><i class="si si-plus"></i></button>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-md-3" for="field-isi_satuan">Isi Satuan</label>
-                                    <div class="col-md-9">
-                                        <input type="number" class="form-control" id="field-isi_satuan" name="isi_satuan" placeholder="Masukan Isi Satuan Barang">
-                                        <div id="error-isi_satuan" class="invalid-feedback"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3" for="field-hrg_pokok">Harga Pokok</label>
-                                    <div class="col-md-9">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                    Rp.
-                                                </span>
-                                            </div>
-                                            <input type="text" class="form-control" id="field-hrg_pokok" name="hrg_pokok" placeholder="..">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">.00</span>
-                                            </div>
-                                        </div>
-                                        <div id="error-hrg_pokok" class="text-danger"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group row border-b">
-                                    <label class="col-12">Harga Jual</label>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3" for="field-hrg_1">Harga 1</label>
-                                    <div class="col-md-9">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">
-                                                        Rp.
-                                                    </span>
-                                                </div>
-                                                <input type="text" class="form-control" id="field-hrg_1" name="hrg_1" placeholder="..">
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text">.00</span>
-                                                </div>
-                                            </div>
-                                        <div id="error-hrg_1" class="text-danger"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3" for="field-hrg_2">Harga 2</label>
-                                    <div class="col-md-9">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">
-                                                        Rp.
-                                                    </span>
-                                                </div>
-                                                <input type="text" class="form-control" id="field-hrg_2" name="hrg_2" placeholder="..">
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text">.00</span>
-                                                </div>
-                                            </div>
-                                        <div id="error-hrg_2" class="text-danger"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3" for="field-hrg_3">Harga 3</label>
-                                    <div class="col-md-9">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                    Rp.
-                                                </span>
-                                            </div>
-                                            <input type="text" class="form-control" id="field-hrg_3" name="hrg_3" placeholder="..">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">.00</span>
-                                            </div>
-                                        </div>
-                                        <div id="error-hrg_3" class="text-danger"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3" for="field-jml_stok">Jumlah jml_stok</label>
-                                    <div class="col-md-9">
-                                        <input type="number" class="form-control" id="field-jml_stok" name="jml_stok" placeholder="Masukan Jumlah Stok Barang">
-                                        <div id="error-jml_stok" class="invalid-feedback"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3" for="field-min_stok">Minimal Stok</label>
-                                    <div class="col-md-9">
-                                        <input type="number" class="form-control" id="field-min_stok" name="min_stok" placeholder="Masukan Minimal Stok Barang">
-                                        <div id="error-min_stok" class="invalid-feedback"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3" for="field-merk">Merk/Seri</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" id="field-merk" name="merk" placeholder="Masukan Merk/Seri Barang">
-                                        <div id="error-merk" class="invalid-feedback"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3" for="field-merk">Diskon</label>
-                                    <div class="col-md-3">
-                                        <div class="input-group">
-                                            <input type="number" class="form-control" id="field-diskon" name="diskon" placeholder="..">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                    Rp.
-                                                </span>
-                                            </div>
-                                            <input type="number" class="form-control" id="field-diskon" name="diskon" placeholder="..">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">.00</span>
-                                            </div>
-                                        </div>
+                                    <div class="col-md-12">
+                                        <textarea class="form-control" name="deskripsi" id="field-deskripsi"></textarea>
+                                        <div id="error-deskripsi" class="invalid-feedback"></div>
                                     </div>
                                 </div>
 
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="form-group">
-                                    <div class="row justify-content-center mb-10">
-                                        <div class="col-12">
-                                            <img id="img_preview" src="{{ asset('assets/img/placeholder.png') }}" width="100%"/>
+                                <div class="form-group row" id="tipe_pembayaran">
+                                    <label class="col-lg-3">Tipe Pembayaran</label>
+                                    <div class="col-lg-9">
+                                        <div class="custom-control custom-radio custom-control-inline mb-5">
+                                            <input class="custom-control-input" type="radio" name="hrg" id="field-hrg_gratis" value="gratis" checked="">
+                                            <label class="custom-control-label" for="field-hrg_gratis">Gratis</label>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input js-custom-file-input-enabled" id="field-foto" name="foto" data-toggle="custom-file-input">
-                                                <label class="custom-file-label" for="field-foto">Pilih File</label>
-                                            </div>
-                                            <div id="error-foto" class="invalid-feedback"></div>
+                                        <div class="custom-control custom-radio custom-control-inline mb-5">
+                                            <input class="custom-control-input" type="radio" name="hrg" id="field-hrg_sekali" value="sekali">
+                                            <label class="custom-control-label" for="field-hrg_sekali">Sekali bayar</label>
                                         </div>
+                                        <div class="custom-control custom-radio custom-control-inline mb-5">
+                                            <input class="custom-control-input" type="radio" name="hrg" id="field-hrg_berulang" value="berulang">
+                                            <label class="custom-control-label" for="field-hrg_berulang">Berulang</label>
+                                        </div>
+                                        <div class="invalid-feedback" id="error-hrg">Invalid feedback</div>
                                     </div>
                                 </div>
-                            </div>
+
+                                <div class="form-group row" id="kol-sekali" style="display:none;">
+                                    <label class="col-md-3" for="field-hrg_sekali">Harga</label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    Rp.
+                                                </span>
+                                            </div>
+                                            <input type="text" class="form-control" id="field-hrg_sekali" name="hrg_sekali" placeholder="..">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">.00</span>
+                                            </div>
+                                        </div>
+                                        <div id="error-hrg_sekali" class="text-danger"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row" id="kol-berulang" style="display:none;">
+                                    <label class="col-md-3" for="field-hrg_pokok">Harga</label>
+                                    <div class="col-lg-9">
+                                        <table class="table table-vcenter">
+                                            <thead class="thead-light">
+                                                <th>Perbulan</th>
+                                                <th>Triwulan</th>
+                                                <th>Caturwulan</th>
+                                                <th>Semester</th>
+                                                <th>Tahunan</th>
+                                            </thead>
+                                            <tbody>
+                                                <td>
+                                                    <input type="number" class="form-control" name="perbulan">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" name="triwulan">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" name="caturwulan">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" name="semester">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" name="tahunan">
+                                                </td>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row" id="domain_gratis">
+                                    <label class="col-3">Domain Gratis</label>
+                                    <div class="col-9">
+                                        <div class="custom-control custom-radio mb-5">
+                                            <input class="custom-control-input" type="radio" name="free_domain" id="field-free_domain1" value="0" checked="">
+                                            <label class="custom-control-label" for="field-free_domain1">Tidak</label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-5">
+                                            <input class="custom-control-input" type="radio" name="free_domain" id="field-free_domain2" value="1">
+                                            <label class="custom-control-label" for="field-free_domain2">Domain gratis hanya registrasi/transfer</label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-5">
+                                            <input class="custom-control-input" type="radio" name="free_domain" id="field-free_domain3" value="2">
+                                            <label class="custom-control-label" for="field-free_domain3">Domain gratis registrasi/transfer dan perpanjang (jika produk diperpanjang)</label>
+                                        </div>
+                                        <div class="invalid-feedback" id="error-free_domain"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group row" id="kol-ketentuan_domain" style="display:none;">
+                                    <label class="col-lg-3" for="field-ketentuan_free_domain">Ketentuan Domain Gratis</label>
+                                    <div class="col-lg-8">
+                                        <select class="js-select2 form-control" id="field-ketentuan_free_domain" name="ketentuan_free_domain" style="width: 100%;" data-placeholder="Choose many.." multiple>
+                                            <option></option>
+                                            <option value="1">Sekali Bayar</option>
+                                            <option value="2">Bulanan</option>
+                                            <option value="3">Triwulan</option>
+                                            <option value="4">Caturwulan</option>
+                                            <option value="5">Semester</option>
+                                            <option value="6">Tahunan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row" id="kol-tld" style="display:none;">
+                                    <label class="col-lg-3" for="field-tld_free_domain">TLDs Domain Gratis</label>
+                                    <div class="col-lg-8">
+                                        <select class="js-select2 form-control" id="field-tld_free_domain" name="tld_free_domain" style="width: 100%;" data-placeholder="Choose many.." multiple>
+                                            <option></option>
+                                            @foreach($domain as $d)
+                                            <option value="{{ $d->id }}">{{ $d->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="btn btn-alt-primary btn-block">
+                                            <i class="si si-check mr-5"></i>
+                                            Simpan
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="col-lg-4">
-                                <button type="submit" class="btn btn-alt-primary btn-block"><i class="si si-check mr-5"></i>Simpan</button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-            <!-- END Default Elements -->
         </div>
     </div>
 </div>
 @stop
 @push('scripts')
+<script src="{{ asset('assets/backend/js/plugins/summernote/summernote-bs4.min.js') }}"></script>
 <script>
 $(document).ready(function () {
     $("#field-foto").change(function (event) {
@@ -216,6 +208,50 @@ $(document).ready(function () {
     });
     $("#field-foto").on('click', function (event) {
         RecurFadeIn();
+    });
+
+    $('#tipe_pembayaran').change(function(){
+        sel_val = $("input[name='hrg']:checked").val();
+
+        if(sel_val == 'sekali')
+        {
+            $('#kol-sekali').show();
+            $('#kol-berulang').hide();
+        }else if(sel_val == 'berulang'){
+            $('#kol-berulang').show();
+            $('#kol-sekali').hide();
+        }else{
+            $('#kol-berulang').hide();
+            $('#kol-sekali').hide();
+        }
+    });
+
+    $('#domain_gratis').change(function(){
+        domain_val = $("input[name='free_domain']:checked").val();
+
+        if(domain_val == '0')
+        {
+            $('#kol-ketentuan_domain').hide();
+            $('#kol-tld').hide();
+        }else{
+            $('#kol-ketentuan_domain').show();
+            $('#kol-tld').show();
+        }
+    });
+
+    $(document).on('keyup', '#field-nama', function() {
+        var Text = $(this).val();
+        Text = Text.toLowerCase();
+        Text = Text.replace(/[^\w ]+/g, '');
+        Text = Text.replace(/ +/g, '-');
+        $("#field-slug").val(Text);
+    });
+
+    $('#field-deskripsi').summernote({
+        height: 200,
+        minHeight: null, // set minimum height of editor
+        maxHeight: null, // set maximum height of editor
+        focus: false // set focus to editable area after initializing summernote
     });
 
     function readURL(input) {
@@ -244,9 +280,9 @@ $(document).ready(function () {
         $(".alert").text(text).addClass("loading");
     }
 
-    $("#form-barang").submit(function(e) {
+    $("#form-product").submit(function(e) {
         e.preventDefault();
-        var formData = new FormData($('#form-barang')[0]);
+        var formData = new FormData($('#form-product')[0]);
         $.ajax({
             url : laroute.route('admin.product.tambah'),
             type: 'post',

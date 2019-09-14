@@ -10,6 +10,6 @@ class TLDs extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name', 'register'
+        'name', 'register', 'transfer', 'renewal', 'dnsmanagement', 'emailforwading', 'idprotection', 'eppcode'
     ];
 }
