@@ -52,6 +52,9 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::post('/update/{id}','ProductController@update')->name('product.update');
         Route::post('hapus/{id}','ProductController@delete')->name('product.delete');
         Route::post('/product', 'ProductController@get_kota')->name('product.json');
+        Route::get('/web_app', 'ProductController@web_app')->name('product.web_app');
+        Route::get('/web_dev', 'ProductController@web_dev')->name('product.web_dev');
+        Route::get('/app_dev', 'ProductController@app_dev')->name('product.app_dev');
 
         Route::group(['prefix' => 'category'], function(){
             Route::get('/', 'CategoryController@index')->name('category');

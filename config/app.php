@@ -168,7 +168,7 @@ return [
         Yajra\Datatables\DatatablesServiceProvider::class,
         Lord\Laroute\LarouteServiceProvider::class,
         Gufy\CpanelWhm\CpanelWhmServiceProvider::Class,
-        Darryldecode\Cart\CartServiceProvider::class,
+        // Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -233,7 +233,7 @@ return [
          * Package Class Providers...
          */
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
-        'Cart' => Darryldecode\Cart\Facades\CartFacade::class
+        // 'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
     ],
 
 ];

@@ -8,10 +8,10 @@
             <a class="block block-link-shadow text-right" href="javascript:void(0)">
                 <div class="block-content block-content-full clearfix">
                     <div class="float-left mt-10 d-none d-sm-block">
-                        <i class="si si-home fa-3x text-body-bg-dark"></i>
+                        <i class="si si-handbag fa-3x text-body-bg-dark"></i>
                     </div>
                     <div class="font-size-h3 font-w600" data-toggle="countTo" data-speed="1000" data-to="">0</div>
-                    <div class="font-size-sm font-w600 text-uppercase text-muted">Data Pasar</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Produk/Layanan</div>
                 </div>
             </a>
         </div>
@@ -19,10 +19,10 @@
             <a class="block block-link-shadow text-right" href="javascript:void(0)">
                 <div class="block-content block-content-full clearfix">
                     <div class="float-left mt-10 d-none d-sm-block">
-                        <i class="si si-wallet fa-3x text-body-bg-dark"></i>
+                        <i class="si si-globe fa-3x text-body-bg-dark"></i>
                     </div>
                     <div class="font-size-h3 font-w600"><span data-toggle="countTo" data-speed="1000" data-to="">0</span></div>
-                    <div class="font-size-sm font-w600 text-uppercase text-muted">Los/Block</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Domain</div>
                 </div>
             </a>
         </div>
@@ -33,7 +33,7 @@
                         <i class="si si-envelope-open fa-3x text-body-bg-dark"></i>
                     </div>
                     <div class="font-size-h3 font-w600" data-toggle="countTo" data-speed="1000" data-to="">0</div>
-                    <div class="font-size-sm font-w600 text-uppercase text-muted">Kios/Ruang</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Tiket Dukungan</div>
                 </div>
             </a>
         </div>
@@ -41,10 +41,10 @@
             <a class="block block-link-shadow text-right" href="javascript:void(0)">
                 <div class="block-content block-content-full clearfix">
                     <div class="float-left mt-10 d-none d-sm-block">
-                        <i class="si si-users fa-3x text-body-bg-dark"></i>
+                        <i class="si si-note fa-3x text-body-bg-dark"></i>
                     </div>
                     <div class="font-size-h3 font-w600" data-toggle="countTo" data-speed="1000" data-to="">0</div>
-                    <div class="font-size-sm font-w600 text-uppercase text-muted">Penyewa</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Invoice</div>
                 </div>
             </a>
         </div>

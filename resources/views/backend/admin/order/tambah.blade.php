@@ -198,6 +198,9 @@
                                         <h4 class="text-center">Ringkasan Order</h4>
                                     </div>
                                 </div>
+                                <div class="row">
+
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -212,55 +215,6 @@
 <script src="{{ asset('assets/backend/js/plugins/summernote/summernote-bs4.min.js') }}"></script>
 <script>
 $(document).ready(function () {
-    $("#field-foto").change(function (event) {
-        RecurFadeIn();
-        readURL(this);
-    });
-    $("#field-foto").on('click', function (event) {
-        RecurFadeIn();
-    });
-
-    $(document).on('keyup', '#field-nama', function() {
-        var Text = $(this).val();
-        Text = Text.toLowerCase();
-        Text = Text.replace(/[^\w ]+/g, '');
-        Text = Text.replace(/ +/g, '-');
-        $("#field-slug").val(Text);
-    });
-
-    $('#field-deskripsi').summernote({
-        height: 200,
-        minHeight: null, // set minimum height of editor
-        maxHeight: null, // set maximum height of editor
-        focus: false // set focus to editable area after initializing summernote
-    });
-
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            var filename = $("#field-foto").val();
-            filename = filename.substring(filename.lastIndexOf('\\') + 1);
-            reader.onload = function (e) {
-                // debugger;
-                $('#img_preview').attr('src', e.target.result);
-                $('#img_preview').hide();
-                $('#img_preview').fadeIn(500);
-                $('.custom-file-label').text(filename);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-        $(".alert").removeClass("loading").hide();
-    }
-
-    function RecurFadeIn() {
-        FadeInAlert("Wait for it...");
-    }
-
-    function FadeInAlert(text) {
-        $(".alert").show();
-        $(".alert").text(text).addClass("loading");
-    }
-
     $('#field-kategori').change(function () {
         if ($(this).val() != '') {
             var select = $(this).attr("id");
@@ -345,5 +299,6 @@ $(document).ready(function () {
         });
     });
 });
+
 </script>
 @endpush

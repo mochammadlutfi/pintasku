@@ -2,34 +2,25 @@
 <html lang="en" class="no-focus">
     <head>
 
-        @include('backend.layouts.meta')
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <!-- Icons -->
-        <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-        <link rel="shortcut icon" href="{{ asset('assets/backend/media/favicons/favicon.png') }}">
-        <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/backend/media/favicons/favicon-192x192.png') }}">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/backend/media/favicons/apple-touch-icon-180x180.png') }}">
-        <!-- END Icons -->
+        @include('layouts.meta')
 
         <!-- Stylesheets -->
 
         <!-- Page JS Plugins CSS -->
-        <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/select2/css/select2.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/slick/slick.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/slick/slick-theme.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css') }}"> --}}
+        {{-- <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/slick/slick.css') }}"> --}}
+        {{-- <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/slick/slick-theme.css') }}"> --}}
         <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/datatables/dataTables.bootstrap4.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/sweetalert2/sweetalert2.min.css') }}">
 
-        <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/summernote/summernote-bs4.css') }}">
+        @yield('styles')
+        {{--  --}}
         <!-- Fonts and Codebase framework -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700">
-        <link rel="stylesheet" id="css-main" href="{{ asset('assets/backend/css/codebase.css') }}">
-        <style>
-            .has-error .select2-selection {
-                border-color: rgb(185, 74, 72) !important;
-            }
-        </style>
+        {{-- <link rel="stylesheet" id="css-main" href="{{ asset('assets/backend/css/codebase.css') }}"> --}}
+        <link rel="stylesheet" id="css-main" href="{{ mix('/assets/backend/css/codebase.css') }}">
+        <!-- Scripts -->
+        <script>window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};</script>
         <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
         <!-- <link rel="stylesheet" id="css-theme" href="assets/backend/css/themes/flat.min.css"> -->
         <!-- END Stylesheets -->
@@ -71,7 +62,7 @@
         <!-- END Page Container -->
         {{-- <script src="{{ asset('assets/backend/js/app.js') }}"></script> --}}
 
-        <script src="{{ asset('assets/backend/js/codebase.core.min.js') }}"></script>
+        {{-- <script src="{{ asset('assets/backend/js/codebase.core.min.js') }}"></script>
         <script src="{{ asset('assets/backend/js/codebase.app.min.js') }}"></script>
         <script src="{{ asset('assets/backend/js/laroute.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/5.0.0/pusher.min.js" integrity="sha256-rumnpK3SJCNuEMjj5oRs5bACsVmCP/TKHg6R6MIWiPo=" crossorigin="anonymous"></script>
@@ -95,6 +86,16 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        </script>
+        </script> --}}
+        <!-- Codebase Core JS -->
+        <script src="{{ asset('assets/backend/js/laroute.js') }}"></script>
+        <script src="{{ mix('/assets/backend/js/codebase.app.js') }}"></script>
+        <script src="{{ asset('assets/backend/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('assets/backend/js/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+        <script src="{{ asset('assets/backend/js/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+
+        <!-- Laravel Scaffolding JS -->
+        <script src="{{ mix('/assets/backend/js/laravel.app.js') }}"></script>
+        @stack('scripts')
     </body>
 </html>

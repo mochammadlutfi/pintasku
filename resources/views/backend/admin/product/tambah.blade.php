@@ -1,5 +1,11 @@
 @extends('backend.layouts.master')
 
+@section('styles')
+<link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/select2/css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/summernote/summernote-bs4.css') }}">
+@endsection
+
+
 @section('content')
 <div class="content">
     <nav class="breadcrumb bg-white push">
@@ -15,10 +21,10 @@
                     <h3 class="block-title">Tambah Produk Baru</h3>
                 </div>
                 <div class="block-content pb-15">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10">
-                            <form id="form-product" method="post" action = "" onsubmit="return false;">
-                                @csrf
+                    <form id="form-product" method="post" action = "" onsubmit="return false;">
+                        @csrf
+                        <div class="row">
+                            <div class="col-lg-8">
                                 <div class="form-group row">
                                     <div class="col-md-12">
                                         <label for="field-nama">Nama Produk/Layanan</label>
@@ -110,29 +116,37 @@
                                     <label class="col-md-3" for="field-hrg_pokok">Harga</label>
                                     <div class="col-lg-9">
                                         <table class="table table-vcenter">
-                                            <thead class="thead-light">
-                                                <th>Perbulan</th>
-                                                <th>Triwulan</th>
-                                                <th>Caturwulan</th>
-                                                <th>Semester</th>
-                                                <th>Tahunan</th>
-                                            </thead>
                                             <tbody>
-                                                <td>
-                                                    <input type="number" class="form-control" name="perbulan">
-                                                </td>
-                                                <td>
-                                                    <input type="number" class="form-control" name="triwulan">
-                                                </td>
-                                                <td>
-                                                    <input type="number" class="form-control" name="caturwulan">
-                                                </td>
-                                                <td>
-                                                    <input type="number" class="form-control" name="semester">
-                                                </td>
-                                                <td>
-                                                    <input type="number" class="form-control" name="tahunan">
-                                                </td>
+                                                <tr>
+                                                    <td>Perbulan</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" name="perbulan">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Triwulan</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" name="triwulan">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Caturwulan</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" name="caturwulan">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Semester</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" name="semester">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tahunan</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" name="tahunan">
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -181,17 +195,50 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="row">
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="form-group row mb-3">
                                     <div class="col-lg-12">
-                                        <button type="submit" class="btn btn-alt-primary btn-block">
-                                            <i class="si si-check mr-5"></i>
-                                            Simpan
-                                        </button>
+                                        <div class="content-heading mb-0 pt-0">Publikasi</div>
                                     </div>
                                 </div>
-                            </form>
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <label class="css-control css-control-primary css-radio">
+                                            <input type="radio" class="css-control-input" id="status_publikasi" name="status" value="1" checked>
+                                            <span class="css-control-indicator"></span> Publikasikan
+                                        </label>
+                                        <label class="css-control css-control-secondary css-radio">
+                                            <input type="radio" class="css-control-input" id="status_draft" name="status" value="0">
+                                            <span class="css-control-indicator"></span> Draft
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-3">
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-alt-primary btn-block"><i class="si si-check mr-5"></i>Simpan</button>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-3">
+                                    <div class="col-lg-12">
+                                        <div class="content-heading mb-0 pt-0">Featured Image</div>
+                                    </div>
+                                </div>
+                                <div class="row gutters-tiny">
+                                    <div class="col-lg-12">
+                                        <div class="text-center mb-15">
+                                            <img id="preview_img" src="{{ asset('assets/img/placeholder/featured_img.png') }}" width="100%">
+                                        </div>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="field-featured_img" name="featured_img" data-toggle="custom-file-input">
+                                            <label class="custom-file-label" for="featured_img">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -199,15 +246,14 @@
 </div>
 @stop
 @push('scripts')
+<script src="{{ asset('assets/backend/js/plugins/select2/js/select2.full.min.js') }}"></script>
 <script src="{{ asset('assets/backend/js/plugins/summernote/summernote-bs4.min.js') }}"></script>
 <script>
+jQuery(function(){ Codebase.helpers(['datepicker', 'select2',]); });
+
 $(document).ready(function () {
-    $("#field-foto").change(function (event) {
-        RecurFadeIn();
+    $("#field-featured_img").change(function (event) {
         readURL(this);
-    });
-    $("#field-foto").on('click', function (event) {
-        RecurFadeIn();
     });
 
     $('#tipe_pembayaran').change(function(){
@@ -257,27 +303,17 @@ $(document).ready(function () {
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-            var filename = $("#field-foto").val();
+            var filename = $("#field-featured_img").val();
             filename = filename.substring(filename.lastIndexOf('\\') + 1);
             reader.onload = function (e) {
                 // debugger;
-                $('#img_preview').attr('src', e.target.result);
-                $('#img_preview').hide();
-                $('#img_preview').fadeIn(500);
+                $('#preview_img').attr('src', e.target.result);
+                $('#preview_img').hide();
+                $('#preview_img').fadeIn(500);
                 $('.custom-file-label').text(filename);
             }
             reader.readAsDataURL(input.files[0]);
         }
-        $(".alert").removeClass("loading").hide();
-    }
-
-    function RecurFadeIn() {
-        FadeInAlert("Wait for it...");
-    }
-
-    function FadeInAlert(text) {
-        $(".alert").show();
-        $(".alert").text(text).addClass("loading");
     }
 
     $("#form-product").submit(function(e) {

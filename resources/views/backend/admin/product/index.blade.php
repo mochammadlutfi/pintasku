@@ -24,13 +24,14 @@
         </ul>
         <div class="block-content tab-content">
             <div class="tab-pane active" id="web-hosting" role="tabpanel">
-                <table class="table table-hover table-striped" id="list-web_hosting">
+                <table class="table table-hover table-striped" id="list-web_hosting" style="width:100%">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Nama</th>
                             <th>Kategori</th>
                             <th>Tipe Pembayaran</th>
+                            <th>Status</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -38,16 +39,49 @@
                 </table>
             </div>
             <div class="tab-pane" id="web-development" role="tabpanel">
-                <h4 class="font-w400">Web Development</h4>
-                <p>...</p>
+                <table class="table table-hover table-striped" id="list-web_dev" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nama</th>
+                            <th>Kategori</th>
+                            <th>Tipe Pembayaran</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
             <div class="tab-pane" id="mobile-development" role="tabpanel">
-                <h4 class="font-w400">App Development</h4>
-                <p>...</p>
+                <table class="table table-hover table-striped" id="list-app_dev" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nama</th>
+                            <th>Kategori</th>
+                            <th>Tipe Pembayaran</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
             <div class="tab-pane" id="web-application" role="tabpanel">
-                <h4 class="font-w400">Web Application</h4>
-                <p>...</p>
+                <table class="table table-hover table-striped" id="list-web_app" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nama</th>
+                            <th>Kategori</th>
+                            <th>Tipe Pembayaran</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -78,6 +112,10 @@ $(function () {
                 name: 'pembayaran'
             },
             {
+                data: 'status',
+                name: 'status'
+            },
+            {
                 data: 'action',
                 name: 'action',
                 orderable: false,
@@ -89,7 +127,7 @@ $(function () {
     $('#list-web_dev').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "<?= route('admin.product'); ?>",
+        ajax: "<?= route('admin.product.web_dev'); ?>",
         columns: [
             {
                 data: 'DT_RowIndex',
@@ -108,6 +146,10 @@ $(function () {
                 name: 'pembayaran'
             },
             {
+                data: 'status',
+                name: 'status'
+            },
+            {
                 data: 'action',
                 name: 'action',
                 orderable: false,
@@ -116,7 +158,7 @@ $(function () {
         ]
     });
 
-    $('#list-mobile_dev').DataTable({
+    $('#list-app_dev').DataTable({
         processing: true,
         serverSide: true,
         ajax: "<?= route('admin.product'); ?>",
@@ -149,7 +191,7 @@ $(function () {
     $('#list-web_app').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "<?= route('admin.product'); ?>",
+        ajax: "<?= route('admin.product.web_app'); ?>",
         columns: [
             {
                 data: 'DT_RowIndex',
@@ -166,6 +208,10 @@ $(function () {
             {
                 data: 'pembayaran',
                 name: 'pembayaran'
+            },
+            {
+                data: 'status',
+                name: 'status'
             },
             {
                 data: 'action',

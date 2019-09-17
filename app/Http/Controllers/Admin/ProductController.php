@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Models\Harga;
 use App\Models\Product;
 use App\Models\TLDs;
@@ -10,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\DataTables;
+use Gufy\CpanelWhm\Facades\CpanelWhm;
 use Storage;
 class ProductController extends Controller
 {
@@ -42,27 +42,116 @@ class ProductController extends Controller
                     return ucwords($row->harga->tipe);
                     // return 'gagal';
                 })
+                ->addColumn('status', function($row){
+
+                    if($row->status == 1)
+                    {
+                        return '<span class="badge badge-success">Publikasi</span>';
+                    }else{
+                        return '<span class="badge badge-danger">Draft</span>';
+                    }
+                })
                 ->addColumn('action', function($row){
 
                     $btn = '<center><div class="btn-group" role="group">
                             <button type="button" class="btn btn-secondary dropdown-toggle" id="btnGroupVerticalDrop3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aksi</button>
                             <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 34px, 0px);">
                                 <a class="dropdown-item" href="'. route('admin.product.edit', $row->id) .'">
-                                    <i class="si si-note mr-5"></i>Edit Data Barang
+                                    <i class="si si-note mr-5"></i>Edit Produk
                                 </a>
                                 <a class="dropdown-item" href="javascript:void(0)" onClick="hapus('.$row->id.')">
-                                    <i class="si si-trash mr-5"></i>Hapus Data Barang
+                                    <i class="si si-trash mr-5"></i>Hapus Produk
                                 </a>
                             </div>
                         </div></center>';
 
                     return $btn;
                 })
-                ->rawColumns(['action', 'tipe', 'kategori'])
+                ->rawColumns(['action', 'tipe', 'kategori', 'status'])
                 ->make(true);
         }
         return view('backend.admin.product.index', compact(''));
 
+    }
+
+    public function web_app(Request $request)
+    {
+        $data = Product::where('tipe', 'webapp')->latest()->get();
+        return Datatables::of($data)
+            ->addIndexColumn()
+            ->addColumn('kategori', function($row){
+                return $row->category->name;
+            })
+            ->addColumn('pembayaran', function($row){
+                return ucwords($row->harga->tipe);
+            })
+            ->addColumn('status', function($row){
+
+                if($row->status == 1)
+                {
+                    return '<span class="badge badge-success">Publikasi</span>';
+                }else{
+                    return '<span class="badge badge-danger">Draft</span>';
+                }
+            })
+            ->addColumn('action', function($row){
+
+                $btn = '<center><div class="btn-group" role="group">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" id="btnGroupVerticalDrop3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aksi</button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 34px, 0px);">
+                            <a class="dropdown-item" href="'. route('admin.product.edit', $row->id) .'">
+                                <i class="si si-note mr-5"></i>Edit Produk
+                            </a>
+                            <a class="dropdown-item" href="javascript:void(0)" onClick="hapus('.$row->id.')">
+                                <i class="si si-trash mr-5"></i>Hapus Produk
+                            </a>
+                        </div>
+                    </div></center>';
+
+                return $btn;
+            })
+            ->rawColumns(['action', 'tipe', 'kategori', 'status'])
+            ->make(true);
+    }
+
+    public function web_dev(Request $request)
+    {
+        $data = Product::where('tipe', 'webdev')->latest()->get();
+        return Datatables::of($data)
+            ->addIndexColumn()
+            ->addColumn('kategori', function($row){
+                return $row->category->name;
+            })
+            ->addColumn('pembayaran', function($row){
+                return ucwords($row->harga->tipe);
+            })
+            ->addColumn('status', function($row){
+
+                if($row->status == 1)
+                {
+                    return '<span class="badge badge-success">Publikasi</span>';
+                }else{
+                    return '<span class="badge badge-danger">Draft</span>';
+                }
+            })
+            ->addColumn('action', function($row){
+
+                $btn = '<center><div class="btn-group" role="group">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" id="btnGroupVerticalDrop3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aksi</button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 34px, 0px);">
+                            <a class="dropdown-item" href="'. route('admin.product.edit', $row->id) .'">
+                                <i class="si si-note mr-5"></i>Edit Produk
+                            </a>
+                            <a class="dropdown-item" href="javascript:void(0)" onClick="hapus('.$row->id.')">
+                                <i class="si si-trash mr-5"></i>Hapus Produk
+                            </a>
+                        </div>
+                    </div></center>';
+
+                return $btn;
+            })
+            ->rawColumns(['action', 'tipe', 'kategori', 'status'])
+            ->make(true);
     }
 
     public function tambah(Request $request)
@@ -105,6 +194,7 @@ class ProductController extends Controller
                 $data->category_id = $request->kategori;
                 $data->description = $request->deskripsi;
                 $data->package = $request->package;
+                $data->status = $request->status;
                 if($data->save())
                 {
                     if($request->hrg == 'sekali')
@@ -158,32 +248,23 @@ class ProductController extends Controller
     {
 
         $rules = [
-            'nik' => 'required',
             'nama' => 'required',
-            'pekerjaan' => 'required',
-            'jk' => 'required',
-            'tmp_lahir' => 'required',
-            'tgl_lahir' => 'required',
-            'kecamatan' => 'required',
-            'kelurahan' => 'required',
-            'rt' => 'required',
-            'rw' => 'required',
-            'alamat' => 'required',
+            'slug' => 'required',
+            'kategori' => 'required',
+            'tipe' => 'required',
+            'free_domain' => 'required',
+            'hrg' => 'required',
         ];
 
         $pesan = [
-            'nik.required' => 'NIK Wajib Diisi!',
-            'nama.required' => 'Nama Lengkap Wajib Diisi!',
-            'jk.required' => 'Jenis Kelamin Wajib Diisi!',
-            'pekerjaan.required' => 'Pekerjaan Wajib Diisi!',
-            'tmp_lahir.required' => 'Tempat Lahir Wajib Diisi!',
-            'tgl_lahir.required' => 'Tanggal Lahir Wajib Diisi!',
-            'kecamatan.required' => 'Kecamatan Wajib Diisi!',
-            'kelurahan.required' => 'Kelurahan Wajib Diisi!',
-            'rt.required' => 'RT/RW Wajib Diisi!',
-            'rw.required' => 'RT/RW Wajib Diisi!',
-            'alamat.required' => 'Alamat Lengkap Wajib Diisi!',
+            'nama.required' => 'Nama Produk/Layanan Wajib Diisi!',
+            'slug.required' => 'Slug Produk/Layanan Wajib Diisi!',
+            'kategori.required' => 'Kategori Produk/Layanan Wajib Diisi!',
+            'tipe.required' => 'Tipe Produk/Layanan Wajib Diisi!',
+            'hrg.required' => 'Tipe Pembayaran Wajib Diisi!',
+            'free_domain.required' => 'Domain Gratis Wajib Diisi!',
         ];
+
         $validator = Validator::make($request->all(), $rules, $pesan);
         if ($validator->fails()){
             return response()->json([
@@ -198,38 +279,69 @@ class ProductController extends Controller
                 $foto = Storage::disk('public')->put('foto', $foto_file);
             }
 
-            $data = Penyewa::find($request->penyewa_id);
-            $data->nik = $request->nik;
-            $data->nama = $request->nama;
-            $data->pekerjaan = $request->pekerjaan;
-            $data->jk = $request->jk;
-            $data->tgl_lahir = date('Y-m-d', strtotime($request->tgl_lahir));
-            $data->tmp_lahir = $request->tmp_lahir;
-            $data->id_kecamatan = $request->kecamatan;
-            $data->id_kelurahan = $request->kelurahan;
-            $data->rt = $request->rt;
-            $data->rw = $request->rw;
-            $data->alamat = $request->alamat;
-            if(!empty($request->file('foto')))
-            {
-                $data->foto = $foto;
-            }
+            $data = Product::find($request->product_id);
+            $data->name = $request->nama;
+            $data->slug = $request->slug;
+            $data->tipe = $request->tipe;
+            $data->category_id = $request->kategori;
+            $data->description = $request->deskripsi;
+            $data->package = $request->package;
+            $data->status = $request->status;
             if($data->save())
             {
-                return response()->json([
-                    'fail' => false,
-                    'url' => route('penyewa')
-                ]);
+                if($request->hrg == 'sekali')
+                {
+                    $harga = new Harga();
+                    $harga->product_id = $data->id;
+                    $harga->tipe = $request->hrg;
+                    $harga->sekali = $request->hrg_sekali;
+                    if($harga->save())
+                    {
+                        return response()->json([
+                            'fail' => false,
+                            'url' => route('admin.product')
+                        ]);
+                    }
+                }else if($request->hrg == 'berulang')
+                {
+                    $harga = new Harga();
+                    $harga->product_id = $data->id;
+                    $harga->tipe = $request->hrg;
+                    $harga->bulanan = $request->perbulan;
+                    $harga->triwulan = $request->triwulan;
+                    $harga->caturwulan = $request->caturwulan;
+                    $harga->semester = $request->semester;
+                    $harga->tahunan = $request->tahunan;
+                    if($harga->save())
+                    {
+                        return response()->json([
+                            'fail' => false,
+                            'url' => route('admin.product')
+                        ]);
+                    }
+                }else{
+                    $harga = new Harga();
+                    $harga->product_id = $data->id;
+                    $harga->tipe = $request->hrg;
+                    if($harga->save())
+                    {
+                        return response()->json([
+                            'fail' => false,
+                            'url' => route('admin.product')
+                        ]);
+                    }
+                }
             }
         }
     }
 
     public function edit($id){
-
-        $data = Penyewa::find($id);
-        $kecamatan = Kecamatan::latest()->get();
-        $kelurahan = Kelurahan::where('id_kecamatan', $data->id_kecamatan)->get();
-        return view('penyewa.edit', compact('data', 'kecamatan', 'kelurahan'));
+        $data = Product::find($id);
+        $domain = TLDs::latest()->get();
+        $kategori = Category::where('status', 1)->latest()->get();
+        $cpanel = json_decode(CpanelWhm::listpkgs());
+        // dd($cpanel);
+        return view('backend.admin.product.edit', compact('data', 'kategori', 'domain', 'cpanel'));
     }
 
     public function hapus($id)

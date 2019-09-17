@@ -1,35 +1,13 @@
 <!doctype html>
 <html lang="en" class="no-focus">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <title>Pintasku - Growth With Us</title>
-
-        <meta name="description" content="Pintasku">
-        <meta name="author" content="pintasku">
-        <meta name="robots" content="noindex, nofollow">
-
-        <!-- Open Graph Meta -->
-        <meta property="og:title" content="Codebase - Bootstrap 4 Admin Template &amp; UI Framework">
-        <meta property="og:site_name" content="Codebase">
-        <meta property="og:description" content="Codebase - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="">
-        <meta property="og:image" content="">
-
-        <!-- Icons -->
-        <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-        <link rel="shortcut icon" href="{{ asset('assets/backend/media/favicons/favicon.png') }}">
-        <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/backend/media/favicons/favicon-192x192.png') }}">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/backend/media/favicons/apple-touch-icon-180x180.png') }}">
-        <!-- END Icons -->
-
+        @include('layouts.meta')
         <!-- Stylesheets -->
 
         <!-- Fonts and Codebase framework -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700">
-        <link rel="stylesheet" id="css-main" href="{{ asset('assets/backend/css/codebase.min.css') }}">
+        <link rel="stylesheet" id="css-main" href="{{ mix('/assets/backend/css/codebase.css') }}">
 
     </head>
     <body>
@@ -53,15 +31,15 @@
                         <!-- Sign In Form -->
                         <div class="row justify-content-center px-5">
                             <div class="col-sm-8 col-md-6 col-xl-4">
-                                <!-- jQuery Validation functionality is initialized with .js-validation-signin class in js/pages/op_auth_signin.min.js which was auto compiled from _es6/pages/op_auth_signin.js -->
-                                <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
+                                @if($type == 'user')
                                 <h3 class="h6 mb-0 my-20">Belum punya akun? <a class="link-effect" href="{{ route('register') }}">Daftar di sini</a></h3>
+                                @endif
                                 <form method="POST" action="{{ route($loginRoute) }}">
                                     @csrf
                                     <div class="form-group row">
                                         <div class="col-12">
                                             <label for="login-username">Username / Email</label>
-                                            <input type="text" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" id="login-username" name="email">
+                                            <input type="text" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" id="login-username" name="email" placeholder="Masukan Username/Email">
                                             @if ($errors->has('email'))
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $errors->first('email') }}</strong>
@@ -72,7 +50,7 @@
                                     <div class="form-group row">
                                         <div class="col-12">
                                             <label for="login-password">Password</label>
-                                            <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" id="login-password" name="password">
+                                            <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" id="login-password" name="password" placeholder="Masukan Password">
                                             @if ($errors->has('password'))
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $errors->first('password') }}</strong>
@@ -88,7 +66,11 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-6 text-sm-right push">
-
+                                                @if (Route::has('password.request'))
+                                                <a class="btn btn-link" href="{{ route($forgotPasswordRoute) }}">
+                                                    Lupa Password?
+                                                </a>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="form-group row mb-0">
@@ -110,14 +92,7 @@
             <!-- END Main Container -->
         </div>
         <!-- END Page Container -->
-        <script src="{{ asset('assets/backend/js/codebase.core.min.js') }}"></script>
-        <script src="{{ asset('assets/backend/js/codebase.app.min.js') }}"></script>
-
-        <!-- Page JS Plugins -->
-        <script src="{{ asset('assets/backend/js/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
-
-        <!-- Page JS Code -->
-        <script src="{{ asset('assets/backend/js/pages/op_auth_signin.min.js') }}"></script>
-
+        <script src="{{ mix('/assets/backend/js/codebase.app.js') }}"></script>
+        {{-- <script src="{{ asset('assets/backend/js/codebase.app.min.js') }}"></script> --}}
     </body>
 </html>

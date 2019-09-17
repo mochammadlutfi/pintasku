@@ -15,7 +15,7 @@ class ForgotPasswordController extends Controller
     /**
      * Only guests for "admin" guard are allowed except
      * for logout.
-     * 
+     *
      * @return void
      */
     public function __construct()
@@ -25,19 +25,21 @@ class ForgotPasswordController extends Controller
 
     /**
      * Show the reset email form.
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function showLinkRequestForm(){
         return view('auth.passwords.email',[
+            'type' => 'Admin',
             'title' => 'Admin Password Reset',
+            'login_route' => 'admin.login',
             'passwordEmailRoute' => 'admin.password.email'
         ]);
     }
 
     /**
      * password broker for admin guard.
-     * 
+     *
      * @return \Illuminate\Contracts\Auth\PasswordBroker
      */
     public function broker(){
@@ -47,7 +49,7 @@ class ForgotPasswordController extends Controller
     /**
      * Get the guard to be used during authentication
      * after password reset.
-     * 
+     *
      * @return \Illuminate\Contracts\Auth\StatefulGuard
      */
     public function guard(){

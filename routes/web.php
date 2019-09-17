@@ -1,16 +1,31 @@
 <?php
+    use Iodev\Whois\Whois;
 Route::get('coba',function(){
-    $list_accounts = CpanelWhm::listpkgs();
 
-    // dd($list_accounts);
-    // return $list_accounts->package['name'];
-    // $list_accounts->package->name;
-    $data = json_decode($list_accounts);
+    // Creating default configured client
+    $whois = Whois::create();
 
-    foreach($data->package as $d)
-    {
-        echo $d->name;
+    // Checking availability
+    if ($whois->isDomainAvailable("makaroniaku.com")) {
+        print "Bingo! Domain is available! :)";
     }
+
+    // // Supports Unicode (converts to punycode)
+    // if ($whois->isDomainAvailable("почта.рф")) {
+    //     print "Bingo! Domain is available! :)";
+    // }
+
+    // // Getting raw-text lookup
+    // $response = $whois->lookupDomain("google.com");
+    // print $response->getText();
+
+    // // Getting parsed domain info
+    // $info = $whois->loadDomainInfo("google.com");
+    // print_r([
+    //     'Domain created' => date("Y-m-d", $info->getCreationDate()),
+    //     'Domain expires' => date("Y-m-d", $info->getExpirationDate()),
+    //     'Domain owner' => $info->getOwner(),
+    // ]);
 });
 
 /* --------------------- Common/User Routes START -------------------------------- */
@@ -25,16 +40,15 @@ Route::group(['prefix' => 'services'], function(){
     Route::get('/domain-registration', 'ServicesController@domain')->name('service.domain');
     Route::get('/web-hosting', 'ServicesController@web_host')->name('service.hosting');
 });
-
-Auth::routes([ 'verify' => true ]);
-
-Auth::routes();
-
-
-Route::get('/beranda', 'Client\BerandaController@index')->name('beranda')->middleware('verified');
-
 Route::group(['prefix' => '/wilayah'], function () {
     Route::post('/kota', 'WilayahController@get_kota')->name('wilayah.kota');
     Route::post('/kecamatan','WilayahController@get_kecamatan')->name('wilayah.kecamatan');
     Route::post('/kelurahan','WilayahController@get_kelurahan')->name('wilayah.kelurahan');
 });
+Auth::routes([ 'verify' => true ]);
+
+Auth::routes();
+
+
+
+

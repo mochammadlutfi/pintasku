@@ -3,13 +3,7 @@
 
 <head>
     <!-- BASIC META-->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Slake best web hosting templete</title>
-    <!-- FAVICON -->
-    <link rel="apple-touch-icon" href="asset/img/favicon/apple-touch-icon.png">
-    <link rel="icon" href="asset/img/favicon/favicon.ico">
+    @include('layouts.meta')
     <!-- WEB FONTS  -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- BOOTSTRAP MIN CSS -->
@@ -31,7 +25,7 @@
     <!--[if lt IE 8]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
-          <!-- preloder. 
+          <!-- preloder.
   <div class="preloader-wrapper">
     <div class="preloder">
       <div class="shape shape-1"></div>
@@ -107,9 +101,9 @@
                         <div class="footer-links">
                            <ul>
                               <li><a href="index.html">Support</a></li>
-                             
+
                               <li><a href="whmcs.html">Search Domain</a></li>
-                             
+
                               <li><a href="#">Support Center</a></li>
                               <li><a href="#">Privacy Policy</a></li>
                            </ul>
@@ -125,12 +119,12 @@
                               <li><a href="#">App Development</a></li>
                               <li><a href="vps-hosting.html">Domain Registration</a></li>
                               <li><a href="hosting.html">Web Hosting</a></li>
-                              
+
                            </ul>
                         </div>
                      </div>
                   </div>
-               
+
                </div>
             </div>
             <div class="early-offer">
