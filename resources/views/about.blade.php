@@ -2,10 +2,10 @@
 
 @section('content')
 
-      <!-- ABOUT UA AREA -->
-      <section class="about-area">
+      <!--  ABOUT AREA 
+ <section class="about-area bgtemplate">
      
-        <img src="assets/img/bg/about.jpg" alt="cloud" class="breadcrumb-right-img">
+        
      <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -26,10 +26,40 @@
             </div>
         </div>
     </section>
+    ABOUT AREA END -->
 
-    <!-- ABOUT UA AREA END -->
+<!-- HEADER-->
+<section class="about-area bgtemplate"> 
+     
+     <div class="container" >
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="about-content-table">
+                        <div class="about-content-table-sell">
+                            <div class="about-heading">
+                              
+                            <h2 class="judul col-md-12">Tentang<br>PINTASKU <span></span></h2>
+                        <div class="col-md-10 isi">
+                            <p class="mt-5 ">Kamu memiliki kemampuan memilih dari ratusan template website atau, gunakan kebebasan untuk mendesain websitemu dari awal.</p>
+                        </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="gbrhead">
+                    <img src="{{asset('assets/img/bg/teamwork.png')}}" class="img-fluid" alt="Responsive image">
+                    </div>
+                    
+                 
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- END HEADER -->
 
-    <!-- WELCOME AREA  -->
+    <!-- TENTANG PINTASKU  -->
     <section class="welcome-area">
    <div class="container">
       <div class="row">
@@ -44,7 +74,7 @@
                    <p>aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.</p>
                 </div>
                 <div class="heading-image">
-                   <img src="assets/img/logo/signature.png" class="attachment-large size-large" alt="">                                          
+                   <img src="{{asset('assets/img/logo/signature.png')}}" class="attachment-large size-large" alt="">                                          
                 </div>
                 <div class="heading-sub clearfix">
                    <h3>KH. Lagos</h3>
@@ -76,51 +106,55 @@
 </section>
 
 
+
+<!-- TENTANG PINTASKU END-->
+
+<!--BRANDE AREA -->
 <section class="brand-area brand-2">
     <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <div class="brand-inner">
+        <div class="brand-inner">
                 <div class="owl-carousel all-brand-carsouel">
                     
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
-                        <img src="assets/img/brand-logo/vuejs.png" alt="brand-icon">
+                        <img src="{{asset('assets/img/brand-logo/vuejs.png')}}" alt="brand-icon">
                     </div>
                     </div>
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
-                        <img src="assets/img/brand-logo/angularjs.png" alt="brand-icon">
+                        <img src="{{asset('assets/img/brand-logo/angularjs.png')}}" alt="brand-icon">
                     </div>
                     </div>
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
-                        <img src="assets/img/brand-logo/nodejs.png" alt="brand-icon">
+                        <img src="{{asset('assets/img/brand-logo/nodejs.png')}}" alt="brand-icon">
                     </div>
                     </div>
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
-                        <img src="assets/img/brand-logo/flutter.png" alt="brand-icon">
+                        <img src="{{asset('assets/img/brand-logo/flutter.png')}}" alt="brand-icon">
                     </div>
                     </div>
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
-                        <img src="assets/img/brand-logo/android.png" alt="brand-icon">
+                        <img src="{{asset('assets/img/brand-logo/android.png')}}" alt="brand-icon">
                     </div>
                     </div>
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
-                        <img src="assets/img/brand-logo/redis.png" alt="brand-icon">
+                        <img src="{{asset('assets/img/brand-logo/redis.png')}}" alt="brand-icon">
                     </div>
                     </div>
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
-                        <img src="assets/img/brand-logo/laravel.png" alt="brand-icon">
+                        <img src="{{asset('assets/img/brand-logo/laravel.png')}}" alt="brand-icon">
                     </div>
                     </div>
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
-                        <img src="assets/img/brand-logo/adonis.png" alt="brand-icon">
+                        <img src="{{asset('assets/img/brand-logo/adonis.png')}}" alt="brand-icon">
                     </div>
                     </div>
                 </div>
@@ -131,4 +165,6 @@
             
     </div>
 </section>
+<!--BRANDE AREA END -->
+
 @endsection

@@ -19,6 +19,8 @@
     <!-- RESPONSIVE CSS -->
     <link href="{{ asset('assets/frontend/css/responsive.css') }}" rel="stylesheet">
 
+    <link href="{{ asset('assets/frontend/css/bootstrap.min.css') }}" rel="stylesheet">
+
 </head>
 
 <body class="homepage-2">
@@ -44,6 +46,7 @@
     @yield('content')
 
       <!--BRANDE AREA  END-->
+
       <!--FOOTER AREA -->
       <section class="footer-area">
          <div class="container">
@@ -87,7 +90,7 @@
                   <div class="col-lg-4 col-md-12 col-12">
                      <div class="footer-single-item">
                         <div class="logo">
-                           <a href="index.html"><img src="http://localhost:8000/assets/img/logo/logo2.png" alt="logo"></a>
+                           <a href="index.html"><img src="{{asset('assets/img/logo/logo2.png')}}" alt="logo"></a>
                         </div>
                         <p>We are Slake 10 years of experience on this field with most talanted  peoples and leaders.</p>
                         <p class="contact-info"><span>Phone:</span><a href="tel:+8801711991383">+0044 545 989 626</a></p>
@@ -136,7 +139,7 @@
                   </div>
                   <div class="col-md-6 col-12 ">
                      <div class="payment-getway text-right">
-                        <img src="assets/img/bg/footer-bottom.png" alt="payment-icon">
+                        <img src="{{asset('assets/img/bg/footer-bottom.png')}}" alt="payment-icon">
                      </div>
                   </div>
                </div>
@@ -162,6 +165,8 @@
       </section>
       <!--FOOTER AREA  END-->
     <script src="{{ asset('assets/frontend/js/jquery.min.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6iKLVzr34W23jAZDT3HlrElOHfK6IH_w"></script>
+  
     <script src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/frontend/js/jquery.onecarousel.min.js') }}"></script>
     <script src="{{ asset('assets/frontend/js/jquery.touchwipe.min.js') }}"></script>

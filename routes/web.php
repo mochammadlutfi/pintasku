@@ -33,12 +33,14 @@ Route::get('coba',function(){
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about-us', 'AboutController@index')->name('about');
 Route::get('/products', 'ProductController@index')->name('product');
-Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/contact', 'ContactController@index')->name('contact');
 Route::group(['prefix' => 'services'], function(){
+
     Route::get('/web-development', 'ServicesController@web_dev')->name('service.web');
     Route::get('/app-development', 'ServicesController@app_dev')->name('service.app');
     Route::get('/domain-registration', 'ServicesController@domain')->name('service.domain');
     Route::get('/web-hosting', 'ServicesController@web_host')->name('service.hosting');
+    Route::get('/detail', 'ServicesController@detail_service')->name('service.detail');
 });
 Route::group(['prefix' => '/wilayah'], function () {
     Route::post('/kota', 'WilayahController@get_kota')->name('wilayah.kota');

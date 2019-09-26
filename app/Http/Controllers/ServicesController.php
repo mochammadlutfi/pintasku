@@ -23,8 +23,9 @@ class ServicesController extends Controller
      */
     public function web_dev()
     {
-        return view('front.services.web_dev');
+        return view('services.web');
     }
+    
 
     public function app_dev()
     {
@@ -39,5 +40,9 @@ class ServicesController extends Controller
     public function web_host()
     {
         return view('front.services.hosting');
+    }
+    public function detail_service()
+    {
+        return view('services.detail');
     }
 }
