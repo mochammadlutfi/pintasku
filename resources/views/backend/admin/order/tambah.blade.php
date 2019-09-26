@@ -55,24 +55,6 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3"></label>
-                                    <div class="col-lg-9">
-                                        <div class="custom-control custom-checkbox custom-control-inline mb-5">
-                                            <input class="custom-control-input" type="checkbox" name="knf_order" id="field-knf_order" value="1" checked="">
-                                            <label class="custom-control-label" for="field-knf_order">Konfirmasi Order</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox custom-control-inline mb-5">
-                                            <input class="custom-control-input" type="checkbox" name="make_invoice" id="field-make_invoice" value="option1" checked="">
-                                            <label class="custom-control-label" for="field-make_invoice">Buat Invoice</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox custom-control-inline mb-5">
-                                            <input class="custom-control-input" type="checkbox" name="kirim_email" id="kirim_email" value="option1" checked="">
-                                            <label class="custom-control-label" for="kirim_email">Kirim Email</label>
-                                        </div>
-                                    </div>
-                                </div>
-
 
                                 <div class="form-group row mb-3">
                                     <div class="col-lg-12">
@@ -105,6 +87,7 @@
                                         <input type="text" class="form-control" id="domain_produk" name="domain_produk" placeholder="Masukan Domain Produk">
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
                                     <label class="col-lg-3" for="field-hrg_pokok">Durasi Paket</label>
                                     <div class="col-lg-9">
@@ -118,7 +101,6 @@
                                         </select>
                                     </div>
                                 </div>
-
 
                                 <div class="form-group row mb-3">
                                     <div class="col-lg-12">
@@ -140,14 +122,6 @@
                                             <input class="custom-control-input" type="radio" name="tipe_daftar" id="field-tipe_daftar3" value="option3">
                                             <label class="custom-control-label" for="field-tipe_daftar3">Transfer</label>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3" for="field-hrg_pokok">Produk</label>
-                                    <div class="col-lg-9">
-                                        <select class="form-control" name="bill_cycles">
-                                            <option value="">Pilih</option>
-                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row" id="kol-domain">
