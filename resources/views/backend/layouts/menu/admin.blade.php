@@ -58,7 +58,7 @@
             </li>
             <li>
                 <a class="{{ Request::is('admin/billing/invoice') ? 'active' : null}}"
-                    href="{{ route('admin.product') }}">Data Invoice</a>
+                    href="{{ route('admin.invoice') }}">Data Invoice</a>
             </li>
         </ul>
     </li>

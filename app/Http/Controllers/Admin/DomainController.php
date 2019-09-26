@@ -32,6 +32,6 @@ class DomainController extends Controller
 
     public function tambah()
     {
-        # code...
+
     }
 }

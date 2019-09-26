@@ -1,5 +1,4 @@
 <?php
-    use Iodev\Whois\Whois;
 Route::get('coba',function(){
 
     // Creating default configured client

@@ -36,4 +36,24 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function provinsi()
+    {
+        return $this->belongsTo('App\Models\Provinsi', 'province_id', 'id');
+    }
+
+    public function kota()
+    {
+        return $this->belongsTo('App\Models\Kota','kota_id', 'id');
+    }
+
+    public function kecamatan()
+    {
+        return $this->belongsTo('App\Models\Kecamatan', 'kecamatan_id', 'id');
+    }
+
+    public function kelurahan()
+    {
+        return $this->belongsTo('App\Models\Kelurahan', 'kelurahan_id', 'id');
+    }
 }

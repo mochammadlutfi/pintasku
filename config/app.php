@@ -168,8 +168,9 @@ return [
         Yajra\Datatables\DatatablesServiceProvider::class,
         Lord\Laroute\LarouteServiceProvider::class,
         Gufy\CpanelWhm\CpanelWhmServiceProvider::Class,
-        // Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-
+        Darryldecode\Cart\CartServiceProvider::class,
+        Lord\Laroute\LarouteServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -230,10 +231,15 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         /*
+         * Helper Class Providers...
+         */
+        'InvoiceHelp' => App\Helpers\InvoiceHelper::class,
+
+        /*
          * Package Class Providers...
          */
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
-        // 'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
     ],
 
 ];

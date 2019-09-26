@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\TLDs;
 class ProductController extends Controller
 {
     /**
@@ -24,14 +24,45 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function order(){
+    public function order(Request $request){
+        if($request->isMethod('get')){
+            $hosting = Product::where('tipe', 'hosting')->latest()->get();
+            $webdev = Product::where('tipe', 'webdev')->latest()->get();
+            return view('backend.client.order.index', compact('hosting', 'webdev'));
+        }else{
 
-        $hosting = Product::where('tipe', 'hosting')->latest()->get();
-        $webdev = Product::where('tipe', 'webdev')->latest()->get();
+            if(empty($request->session()->get('product'))){
+                $product = new Product();
+                $request->session()->put('product', $product);
+            }else{
+                $product = $request->session()->get('product');
+                $request->session()->put('product', $product);
+            }
 
-        return view('backend.client.order.first', compact('hosting', 'webdev'));
+            return redirect(route('order.domain'));
+
+        }
     }
 
+    public function domain(Request $request){
+        if($request->isMethod('get')){
+            $hosting = Product::where('tipe', 'hosting')->latest()->get();
+            $tld = TLDs::latest()->get();
+            return view('backend.client.order.kedua', compact('hosting', 'tld'));
+        }else{
+
+            if(empty($request->session()->get('product'))){
+                $product = new Product();
+                $request->session()->put('product', $product);
+            }else{
+                $product = $request->session()->get('product');
+                $request->session()->put('product', $product);
+            }
+
+            return redirect(route('order.domain'));
+
+        }
+    }
 
     public function my_product(){
         return view('backend.client.product.my_product');

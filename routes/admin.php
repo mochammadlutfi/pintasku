@@ -40,9 +40,13 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::group(['prefix' => 'order'], function(){
         Route::get('/list','OrderController@index')->name('order');
         Route::match(['get', 'post'], 'tambah', 'OrderController@tambah')->name('order.tambah');
-        Route::get('/edit/{id}','OrderController@edit')->name('order.edit');
+        Route::get('/detail/{id}','OrderController@detail')->name('order.detail');
         Route::post('/update/{id}','OrderController@update')->name('order.update');
         Route::post('hapus/{id}','OrderController@delete')->name('order.delete');
+        Route::post('add_cart','OrderController@add_cart')->name('order.add_cart');
+        Route::get('remove_cart/{id}','OrderController@remove_cart')->name('order.remove_cart');
+        Route::post('change_cycles','OrderController@change_cycles')->name('order.change_cycles');
+        Route::post('add_domain','OrderController@add_domain')->name('order.add_domain');
     });
 
     Route::group(['prefix' => 'product'],function(){
@@ -71,6 +75,16 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::get('/edit/{id}','TLDsController@edit')->name('tld.edit');
         Route::post('/update','TLDsController@update')->name('tld.update');
         Route::get('/hapus/{id}','TLDsController@hapus')->name('tld.hapus');
+    });
+
+    Route::group(['prefix' => 'billing'], function(){
+
+        Route::group(['prefix' => 'invoice'], function(){
+            Route::get('/', 'InvoiceController@index')->name('invoice');
+            Route::get('/detail/{id}','InvoiceController@detail')->name('invoice.detail');
+        });
+
+
     });
 
 });
