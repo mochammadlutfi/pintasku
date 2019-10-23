@@ -20,33 +20,49 @@
                                     <div class="col-md-12 col-sm-12">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-6">
+                                            
                                                 <div class="mega-single-items margin-bottom">
-                                                    <!--<img src="{{ asset('assets/img/icons/mega-icon.png') }}" alt="mega-icon">-->
+                                                <img src="{{ asset('assets/img/service/icon/webdev.png') }}" alt="mega-icon">
                                                     <a class="hosting-links" href="{{ route('service.web') }}">
                                                         <h2>Web Development</h2>
                                                     </a>
                                                     <p>Lorem ipsum dolor sit amet, sicing elit, sed do anaglom eiusm.</p>
                                                 </div>
-                                                <div class="mega-single-items ">
-                                                    <!--<img src="{{ asset('assets/img/icons/mega-icon3.png') }}" alt="mega-icon">-->
+                                                <div class="mega-single-items margin-bottom">
+                                                    <img src="{{ asset('assets/img/service/icon/appdev2.png') }}" alt="mega-icon">
                                                     <a class="hosting-links" href="{{ route('service.app') }}">
                                                         <h2>App Development</h2>
+                                                    </a>
+                                                    <p>Lorem ipsum dolor sit amet, sicing elit, sed do anaglom eiusm.</p>
+                                                </div>
+
+                                                <div class="mega-single-items ">
+                                                <img src="{{ asset('assets/img/service/icon/seo2.png') }}" alt="mega-icon">
+                                                    <a class="hosting-links" href="{{ route('service.app') }}">
+                                                        <h2>SEO Analysis</h2>
                                                     </a>
                                                     <p>Lorem ipsum dolor sit amet, sicing elit, sed do anaglom eiusm.</p>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-6">
                                                 <div class="mega-single-items margin-bottom">
-                                                         <!--<img src="{{ asset('assets/img/icons/mega-icon3.png') }}" alt="mega-icon">-->
+                                                         <img src="{{ asset('assets/img/service/icon/domain2.png') }}" alt="mega-icon">
                                                     <a class="hosting-links" href="{{ route('service.domain') }}">
                                                         <h2>Domain Registration</h2>
                                                     </a>
                                                     <p>Lorem ipsum dolor sit amet, sicing elit, sed do anaglom eiusm.</p>
                                                 </div>
-                                                <div class="mega-single-items">
-                                                         <!--<img src="{{ asset('assets/img/icons/mega-icon3.png') }}" alt="mega-icon">-->
+                                                <div class="mega-single-items margin-bottom">
+                                                <img src="{{ asset('assets/img/service/icon/hosting2.png') }}" alt="mega-icon">
                                                     <a class="hosting-links" href="{{ route('service.hosting') }}">
                                                         <h2>Web Hosting</h2>
+                                                    </a>
+                                                    <p>Lorem ipsum dolor sit amet, sicing elit, sed do anaglom eiusm.</p>
+                                                </div>
+                                                <div class="mega-single-items">
+                                                <img src="{{ asset('assets/img/service/icon/sosmed2.png') }}" alt="mega-icon">
+                                                    <a class="hosting-links" href="{{ route('service.hosting') }}">
+                                                        <h2>Sosial Media Analysis</h2>
                                                     </a>
                                                     <p>Lorem ipsum dolor sit amet, sicing elit, sed do anaglom eiusm.</p>
                                                 </div>

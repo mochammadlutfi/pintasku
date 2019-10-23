@@ -16,6 +16,9 @@
                             <h2 class="judul col-md-12">Bangun Brandmu dengan <br>template <span>Profesional</span></h2>
                         <div class="col-md-10 isi">
                             <p class="mt-5 ">Kamu memiliki kemampuan memilih dari ratusan template website atau, gunakan kebebasan untuk mendesain websitemu dari awal.</p>
+                            <ul class="d-inline">
+                 <li class="d-inline"><a href="#" class="download-btn btn-lg " >Get Started</a> </li>
+              </ul>
                         </div>
                                 
                             </div>
@@ -23,10 +26,11 @@
                     </div>
                 </div>
                 <div class="col-md-5">
+                    <div class="row">
                     <div class="gbrhead">
-                    <img src="{{asset('assets/img/bg/template.png')}}" class="img-fluid" alt="Responsive image">
+                    <img src="{{asset('assets/img/bg/produk.png')}}" class="img-fluid center" alt="https://www.freepik.com/free-photos-vectors/business">
                     </div>
-                    
+                    </div>
                  
                 </div>
             </div>
@@ -87,7 +91,7 @@
     <div class="card ">          
         <img class="card-img-top" src="{{asset('assets/img/product/product2.png')}}" alt="Card image cap">
 <div class="card-body">
-        <h5 class="card-title">Brabo - Business Agency HTML Template</h5>
+        <h5 class="card-title"><a href="{{ route('detailproduct') }}">Brabo - Business Agency HTML Template</a></h5>
         <span class="meta-wrap author-meta">
                 <a href="#">Landing Page, E-comerce, Bootstrap 4 </a>
         </span>
@@ -107,9 +111,9 @@
             </div>
             <div class="col-lg-6">
             <div class="button-kanan text-right">
-                <a href="#" class="btn btn-sm btn-outline-secondary post-permalink"><i class="fas fa-folder-open"></i></a>
+                <a href="{{ route('detailproduct') }}" class="btn btn-sm btn-outline-secondary post-permalink"><i class="fas fa-folder-open"></i></a>
                 <a href="#" class="btn btn-sm btn-outline-secondary post-permalink"><span class="fas fa-desktop"></span></a>
-                <a href="#" class="btn btn-sm btn-outline-secondary post-permalink"><span class="fas fa-download"></span></a>
+                <a href="#" class="btn btn-sm btn-outline-secondary post-permalink"><span class="fas fa-shopping-bag"></span></a>
             </div>
             </div>
     </div>      
@@ -156,7 +160,7 @@
             <div class="button-kanan text-right">
                 <a href="#" class="btn btn-sm btn-outline-secondary post-permalink"><i class="fas fa-folder-open"></i></a>
                 <a href="#" class="btn btn-sm btn-outline-secondary post-permalink"><span class="fas fa-desktop"></span></a>
-                <a href="#" class="btn btn-sm btn-outline-secondary post-permalink"><span class="fas fa-download"></span></a>
+                <a href="#" class="btn btn-sm btn-outline-secondary post-permalink"><span class="fas fa-shopping-bag"></span></a>
             </div>
             </div>
     </div>      
@@ -203,7 +207,7 @@
             <div class="button-kanan text-right">
                 <a href="#" class="btn btn-sm btn-outline-secondary post-permalink"><i class="fas fa-folder-open"></i></a>
                 <a href="#" class="btn btn-sm btn-outline-secondary post-permalink"><span class="fas fa-desktop"></span></a>
-                <a href="#" class="btn btn-sm btn-outline-secondary post-permalink"><span class="fas fa-download"></span></a>
+                <a href="#" class="btn btn-sm btn-outline-secondary post-permalink"><span class="fas fa-shopping-bag"></span></a>
             </div>
             </div>
     </div>      

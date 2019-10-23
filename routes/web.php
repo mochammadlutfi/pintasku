@@ -6,6 +6,7 @@
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about-us', 'AboutController@index')->name('about');
 Route::get('/products', 'ProductController@index')->name('product');
+Route::get('/detail-products', 'ProductController@detail')->name('detailproduct');
 Route::get('/contact', 'ContactController@index')->name('contact');
 Route::group(['prefix' => 'services'], function(){
 
