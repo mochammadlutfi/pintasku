@@ -43,6 +43,11 @@
                             <h2 class="judul col-md-12"><br>Web Development <span></span></h2>
                         <div class="col-md-10 isi">
                             <p class="mt-5 ">Kamu memiliki kemampuan memilih dari ratusan template website atau, gunakan kebebasan untuk mendesain websitemu dari awal.</p>
+                            <ul class="d-inline">
+                 <li class="d-inline"><a href="#" class="download-btn btn-lg " >See pricing</a> </li>
+              </ul>
+                        
+                        
                         </div>
                                 
                             </div>
@@ -51,7 +56,7 @@
                 </div>
                 <div class="col-md-5">
                     <div class="gbrhead">
-                    <img src="{{asset('assets/img/bg/teamwork.png')}}" class="img-fluid" alt="Responsive image">
+                    <img src="{{asset('assets/img/bg/webdev.png')}}" class="img-fluid" alt="https://www.freepik.com/free-photos-vectors/banner">
                     </div>
                     
                  
@@ -74,17 +79,7 @@
                      </div>
                   </div>
                </div>
-               <div class="row">
-                  <div class="col-md-12">
-                     <nav class="pricing-tab">
-                        <span class="monthly_tab_title">
-                        Monthly                 </span>
-                        <span class="pricing-tab-switcher"></span>
-                        <span class="annual_tab_title">
-                        Annual                  </span>
-                     </nav>
-                  </div>
-               </div>
+               
                <div class="row">
                   <div class="col-lg-4 col-md-12 col-xs-12">
                      <div class="single-pricing-table">

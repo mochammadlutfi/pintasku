@@ -64,21 +64,21 @@
     <div class="row">
         <div class="col-md-4 col-12 ">
             <div class="single-blog-1">
-                <img src="{{asset('assets/img/service/freedomain.png')}}" alt="section-icon">
+                <img src="{{asset('assets/img/service/icon/domain-01.png')}}" alt="section-icon">
                 <h2>Free Domain</h2>
                 <p>After you purchase a hosting plan, you need to set up it before you use it to your website.</p>
             </div>
         </div>
         <div class="col-md-4 col-12 ">
             <div class="single-blog-1">
-                <img src="{{asset('assets/img/service/cpanel.png')}}" alt="section-icon">
+                <img src="{{asset('assets/img/service/icon/cpanel.png')}}" alt="section-icon">
                 <h2>Control Cpanel</h2>
                 <p>After you purchase a hosting plan, you need to set up it before you use it to your website.</p>
             </div>
         </div>
         <div class="col-md-4 col-12 ">
             <div class="single-blog-1">
-                <img src="{{asset('assets/img/service/24jam.png')}}" alt="section-icon">
+                <img src="{{asset('assets/img/service/icon/section-icon-3.png')}}" alt="section-icon">
                 <h2>24/7 Hour Support</h2>
                 <p>After you purchase a hosting plan, you need to set up it before you use it to your website.</p>
             </div>
@@ -105,7 +105,7 @@
     <div class="row">
         <div class="col-lg-6 col-md-6 col-12 ">
             <div class="single-blog-1">
-                <img src="{{asset('assets/img/service/web_development.png')}}" alt="section-icon">
+                <img src="{{asset('assets/img/service/icon/section-icon.png')}}" alt="section-icon">
                 <h2>Web Development</h2>
                 <p>Lorem ipsum dolor sittem ametam ngcing elit, per sed do eiusmoad tepor inunt ut sedig do eiusmod.</p>
                 <a href="#" class="read-more-btn">read more <i class="ti-arrow-right"></i> </a>
@@ -113,7 +113,7 @@
         </div>
         <div class="col-lg-6 col-md-6 col-12 ">
             <div class="single-blog-1">
-                <img src="{{asset('assets/img/service/mobile_phone.png')}}" alt="section-icon">
+                <img src="{{asset('assets/img/service/icon/appdev.png')}}" alt="section-icon">
                 <h2>App Development</h2>
                 <p>Lorem ipsum dolor sittem ametam ngcing elit, per sed do eiusmoad tepor inunt ut sedig do eiusmod.</p>
                 <a href="#" class="read-more-btn">read more <i class="ti-arrow-right"></i></a>
@@ -121,7 +121,7 @@
         </div>
         <div class="col-lg-6 col-md-6 col-12 ">
             <div class="single-blog-1">
-                <img src="{{asset('assets/img/service/freedomain.png')}}" alt="section-icon">
+                <img src="{{asset('assets/img/service/icon/domain-01.png')}}" alt="section-icon">
                 <h2>Domain Registration</h2>
                 <p>Lorem ipsum dolor sittem ametam ngcing elit, per sed do eiusmoad tepor inunt ut sedig do eiusmod.</p>
                 <a href="#" class="read-more-btn">read more <i class="ti-arrow-right"></i></a>
@@ -129,7 +129,7 @@
         </div>
         <div class="col-lg-6 col-md-6 col-12 ">
             <div class="single-blog-1">
-                <img src="{{asset('assets/img/service/data_hosting.png')}}" alt="section-icon">
+                <img src="{{asset('assets/img/service/icon/service-icon-6.png')}}" alt="section-icon">
                 <h2>Web Hosting</h2>
                 <p>Lorem ipsum dolor sittem ametam ngcing elit, per sed do eiusmoad tepor inunt ut sedig do eiusmod.</p>
                 <a href="#" class="read-more-btn">read more <i class="ti-arrow-right"></i></a>

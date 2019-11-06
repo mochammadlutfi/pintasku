@@ -2,62 +2,6 @@
 
 @section('content')
 
-      <!--  ABOUT AREA 
- <section class="about-area bgtemplate">
-     
-        
-     <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="about-content-table">
-                        <div class="about-content-table-sell">
-                            <div class="about-heading">
-                                <h3>Tentang</h3><h2>Pintasku</h2><br>
-                                  <div class="about-links">
-                                      <ul>
-                                          <li><a href="index.html">Home </a></li>
-                                          <li class="d-link">- About us</li>
-                                      </ul>
-                                  </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    ABOUT AREA END -->
-
-<!-- HEADER-->
-<section class="about-area bgtemplate"> 
-     
-     <div class="container" >
-            <div class="row">
-                <div class="col-md-7">
-                    <div class="about-content-table">
-                        <div class="about-content-table-sell">
-                            <div class="about-heading">
-                              
-                            <h2 class="judul col-md-12">Tentang<br>PINTASKU <span></span></h2>
-                        <div class="col-md-10 isi">
-                            <p class="mt-5 ">Kamu memiliki kemampuan memilih dari ratusan template website atau, gunakan kebebasan untuk mendesain websitemu dari awal.</p>
-                        </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="gbrhead">
-                    <img src="{{asset('assets/img/bg/teamwork.png')}}" class="img-fluid" alt="Responsive image">
-                    </div>
-                    
-                 
-                </div>
-            </div>
-        </div>
-    </section>
-<!-- END HEADER -->
 
     <!-- TENTANG PINTASKU  -->
     <section class="welcome-area">
@@ -66,7 +10,7 @@
          <div class="col-xl-7 col-lg-7 col-md-12">
          <div class="welcome-left">
             <h5 class="heading-title">Who We Are</h5>
-                <h2 class="heading-title-default">Slake is a fledged <span>hosting provider</span>
+                <h2 class="heading-title-default">Pintasku a fledged <span>hosting provider</span>
                    working successfully for last 12 years.
                 </h2>
                 <div class="heading-text clearfix">
@@ -90,15 +34,13 @@
                        <img src="assets/img/slider-img/about-imag2.jpg" alt="">                 
                     </div>
                     <div class="slider-item ">
-                       <img src="assets/img/slider-img/about-imag2.jpg" alt="">                   
+                       <img src="assets/img/slider-img/about2.jpg" alt="">                   
                     </div>
                     <div class="slider-item">
                        <img src="assets/img/slider-img/about-imag2.jpg" alt="">                   
                     </div>
                </div>
-               <div class="bg-shadow-img">
-                  <img src="assets/img/slider-img/about-imag-back.jpg" alt="">
-               </div>
+              
             </div>
          </div>
       </div>

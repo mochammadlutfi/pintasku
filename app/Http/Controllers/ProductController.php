@@ -25,4 +25,8 @@ class ProductController extends Controller
     {
         return view('product');
     }
+    public function detail()
+    {
+        return view('detailproduct');
+    }
 }

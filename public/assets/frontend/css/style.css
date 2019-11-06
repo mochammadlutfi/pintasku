@@ -1097,7 +1097,7 @@ a.pricing-btn.blue-btn.homepage-one-all-features-btn.action-btn.slider-links-2 {
   transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
 }
 .slider-single-item {
-    background-image: url(assets/img/bg/1.png);
+  
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -4652,6 +4652,7 @@ img.breadcrumb-right-img-man {
 .about-content-table {
     display: table;
     width: 100%;
+    
 }
 
 .about-content-table-sell {
@@ -4661,9 +4662,11 @@ img.breadcrumb-right-img-man {
     text-align: left;
 }
 .about-content-table-sell .about-heading.blog-details-heading {
-    text-align: center;
+    text-align: left;
     padding-top: 90px;
-    padding-bottom: 60px;
+    padding-bottom: 10px;
+ 
+    margin-left: -10px;
 }
 .filter-nav .btn{
     margin: 5px;
@@ -4733,6 +4736,12 @@ img.breadcrumb-right-img-man {
     color: #fff;
     border-color: #3464e0;
 }
+.about-heading.blog-details-heading h2 {
+    font-size: 39px;
+    font-weight: 700;
+    line-height: 45px;
+    color:#3a4368;
+}
 
 
 .about-heading.blog-details-heading p.blog-meta a span {
@@ -4744,7 +4753,7 @@ img.breadcrumb-right-img-man {
     font-size: 12px;
     display: inline-block;
     padding: 5px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 500;
     transition: .3s;
 }
@@ -4752,7 +4761,7 @@ img.breadcrumb-right-img-man {
     color: #21A7B7;
 }
 .about-heading {
-   padding: 120px 0px 135px 0px
+   padding: 80px 0px 120px 0px
 }
 .about-links
  ul {
@@ -4781,16 +4790,19 @@ ul li a {
 }
 h5.heading-title {
     color: #3e445b;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 26px;
     margin-bottom: 20px;
+    font-weight: bold;
+  
 }
 
 h2.heading-title-default {
     color: #3a4368;
     line-height: 40px;
-    font-size: 30px;
+    font-size: 32px;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 h2.heading-title-default span {
@@ -5383,7 +5395,7 @@ ul.nav.nav-tabs li.active a:after {
 
 
 .welcome-area {
-    padding: 120px 0px 90px 0px;
+    padding: 100px 0px 90px 0px;
 }
 .welcome-area .container {
     position: relative;
@@ -6038,6 +6050,7 @@ hosting.html STYLE
     color: #3a4368;
     margin: 40px 0 6px;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 section.hosting-plan-area.hosting-plan-area-affiliate .single-hosting-price h2 {
     font-size: 18px;
@@ -6064,7 +6077,7 @@ section.hosting-plan-area.hosting-plan-area-affiliate .single-hosting-price li s
     border-bottom: 1px solid #E7F1FF;
 }
 .single-hosting-price.display-none {
-    margin-top: 167px;
+    margin-top: 195px;
 }
 section.hosting-plan-area.hosting-plan-area-affiliate .single-hosting-price.display-none {
     margin-top: 0;
@@ -6661,6 +6674,51 @@ textarea#Message {
     height: 50px;
     padding: 15px 18px;
 }
+.aksi-button button {
+    
+    text-decoration: none;
+    font-weight: 500;
+    
+    font-size: 12px;
+    display: inline-block;
+    color: #fff;
+    border: 0px;
+    text-transform: uppercase;
+    outline: none;
+  
+    
+  
+    float: left;
+    margin: 10px;
+    padding: 12px 35px;
+    
+    box-shadow: none;
+}
+.blog-recent-post-content .aksi-button button {
+    
+    text-decoration: none;
+    font-weight: 500;
+    
+    font-size: 14px;
+    display: inline-block;
+    color: #fff;
+    border: 0px;
+    text-transform: uppercase;
+    outline: none;
+  
+    
+  
+  
+    
+    
+    box-shadow: none;
+}
+.aksi-button button span{
+    color: #ffffff;
+}
+.aksi-button{
+  margin-bottom: 20px;
+}
 section.map-area {
     position: relative;
 }
@@ -6673,6 +6731,10 @@ section.map-area {
 /* =====================================
 FULL BLOG.HTMLAREA
 ===================================== */
+.single-blog-box .blog-box-content ul{
+    margin: 0px;
+   float: left;
+}
 .blog-section-area {
     padding: 110px 0px 120px 0px;
 }
@@ -6879,7 +6941,7 @@ section.blog-details.latest-blog-area .single-blog-box {
 }
 
 .latest-blog-area {
-    padding: 120px 0;
+    padding: 5px 0;
 }
 
 .latest-blog-area .single-blog-image img {
@@ -7135,6 +7197,16 @@ padding: 30px 0px;
     background: #f8f9ff;
     position: relative;
 }
+.blog-categories-right h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #3e445b;
+    margin: 0 0 12px;
+    display: block;
+    padding: 30px 0px 30px 30px;
+    background: #f8f9ff;
+    position: relative;
+}
 .blog-recent-post h3:after {
     position: absolute;
     top: auto;
@@ -7188,7 +7260,7 @@ padding: 30px 0px;
 }
 .blog-details .blog-box-content{
     border: 0px;
-    margin: 0;
+    margin-top: 30px;
     padding: 0;
 }
 .blog-details .single-blog-box:hover{
@@ -7215,10 +7287,11 @@ padding: 30px 0px;
 .blog-recent-post {
     border: 1px solid#ced4da;
     border-radius: 5px;
-    margin-top: 60px;
+    margin-top: 0px;
 }
 .blog-recent-post-list{
-    padding: 28px;
+
+    padding: 20px 28px 28px 28px;
 }
 
 .shop-recent-post-image-1 {
@@ -7240,9 +7313,10 @@ padding: 30px 0px;
     font-size: 12px;
     color: #536d87;
     margin: 0 0 5px;
+    font-weight: 600;
 }
 .blog-recent-post-content h2 {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     color: #252525;
     margin: 0;
@@ -7254,7 +7328,7 @@ padding: 30px 0px;
 }
 
 .blog-recent-post-content {
-    margin-top: 5px;
+    margin-top: 20px;
 }
 
 .blog-recent-post-content a {
@@ -7275,6 +7349,16 @@ padding: 30px 0px;
     padding:0px;
 }
 .blog-tag-cloud h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3e445b;
+    margin: 0 0 10px;
+    display: block;
+    padding: 30px 0px 30px 30px;
+    background: #f8f9ff;
+    position: relative;
+}
+.blog-tag-cloud h3 {
     font-size: 24px;
     font-weight: 600;
     color: #3e445b;
@@ -7348,6 +7432,14 @@ padding: 30px 0px;
     font-size: 14px;
     color: #3e445b;
     font-weight: 400;
+}
+.blog-details .single-blog-box h2 {
+    padding: 0 30px;
+    margin: 0 0 30px;
+    text-align: left;
+    font-size: 22px;
+    color: #3e445b;
+    font-weight: 500;
 }
 
 .single-blog-box span {
@@ -8454,6 +8546,10 @@ box-shadow: 0px 15px 30px 0px rgba(0, 35, 13, 0.15);
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
 }
+.card-body h5 a{
+    color: #3e445b;
+    text-decoration: none;
+}
 .card-footer .harga{
     
     font-weight: 600;
@@ -8481,7 +8577,32 @@ section .about-area, .bgtemplate {
   
     background-image: url("/assets/img/bg/3.png"); 
 }
-.gbrhead{
+.about-area .gbrhead{
+ 
+    
+    
   float: right;  
+  position: absolute;
+    right: 0;
+    top: 5%;
+  vertical-align: middle;
+ 
 } 
+.about-area a.download-btn {
+    padding: 15px 48px;
+    background-color: #3464e0;
+    font-size: 14px;
+    color: #ffffff;
+    text-transform: capitalize;
+    text-decoration: none;
+   margin-top: 20px;
+    border-radius: 5px;
+    transition: all .3s ease-in;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+.overview h2{
+    float: left;
+    margin-bottom: 20px;
 }

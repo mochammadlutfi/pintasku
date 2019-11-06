@@ -29,17 +29,17 @@ class ServicesController extends Controller
 
     public function app_dev()
     {
-        return view('front.services.app_dev');
+        return view('services.app_dev');
     }
 
     public function domain()
     {
-        return view('front.services.domain');
+        return view('services.domain');
     }
 
     public function web_host()
     {
-        return view('front.services.hosting');
+        return view('services.hosting');
     }
     public function detail_service()
     {

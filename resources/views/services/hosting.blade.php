@@ -2,7 +2,7 @@
 
 @section('content')
 
-<!-- HEADER-->
+<!-- HEADER-
       <section class="about-area"> 
     <img src="{{asset('assets/img/bg/about.jpg')}}" alt="cloud" class="breadcrumb-right-img">
      <div class="container">
@@ -26,16 +26,162 @@
             </div>
         </div>
     </section>
+ END HEADER -->
+
+
+<!---TABLE  HARGA -->
+
+<!-- HEADER-->
+<section class="about-area bgtemplate"> 
+     <div class="container" >
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="about-content-table">
+                        <div class="about-content-table-sell">
+                            <div class="about-heading">
+                              
+                            <h2 class="judul col-md-12"><br>Web Hosting <span></span></h2>
+                        <div class="col-md-10 isi">
+                            <p class="mt-5 ">Kamu memiliki kemampuan memilih dari ratusan template website atau, gunakan kebebasan untuk mendesain websitemu dari awal.</p>
+                        
+                           
+                            <ul class="d-inline">
+                 <li class="d-inline"><a href="#" class="download-btn btn-lg " >See pricing</a> </li>
+              </ul>
+         
+                        
+                        </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="gbrhead">
+                    <img src="{{asset('assets/img/bg/hosting.png')}}" class="img-fluid" alt="https://www.freepik.com/free-photos-vectors/background">
+                    </div>
+                    
+                 
+                </div>
+            </div>
+        </div>
+    </section>
 <!-- END HEADER -->
 
 
-   <!--HOSTING PLAN AREA-->
-   <section class="hosting-plan-area">
+<section class="blog-1-area about-blog">
+         <div class="container">
+            <div class="homepage-2 pricing-table-area">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="section-title">
+                        <h2><span>Pilih</span>  Paket Web Hosting </h2>
+                        <img src="{{asset('assets/img/section-shape.png')}}" alt="section-shape">
+                        <p>Lorem ipsum dolor sittem ametamngcing elit, per sed do eiusmoad teimpor sittemelit inuning ut sed sittem do eiusmod.</p>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="row">
+                  <div class="col-lg-4 col-md-12 col-xs-12">
+                     <div class="single-pricing-table">
+                     <h2>PERSONAL</h2>
+                        <img src="{{asset('assets/img/pricing-icon/tokoonline.svg')}}" alt="pricing-icon">
+                        
+                        <div class="pricing-amount">
+                           <div class="annual_price">
+                              <sup><span class="currency">$</span></sup>
+                              <span class="price"> 00 </span>
+                              <span class="subscription"> /Annual </span>
+                           </div>
+                           <div class="monthly_price">
+                              <sup><span class="currency">$</span></sup>
+                              <span class="price"> 00 </span>
+                              <span class="subscription"> /Monthly </span>
+                           </div>
+                        </div>
+                        <div class="pricing-content">
+                           <ul>
+                              <li>10GB Space</li>
+                              <li>1 Free Domain</li>
+                              <li>300GB SSD Disk</li>
+                              <li>Special Offers</li>
+                              <li>Unlimited Support</li>
+                           </ul>
+                           <a class="pricing-btn blue-btn"href="{{ route('service.detail') }}">Select Plan</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-12 col-xs-12">
+                     <div class="single-pricing-table active">
+                        <span class="table-highlight">Popular</span>
+                        <h2>START UP</h2>
+                        <img src="{{asset('assets/img/pricing-icon/companyprofile.svg')}}" alt="pricing-icon">
+                        <div class="pricing-amount">
+                           <div class="annual_price">
+                              <sup><span class="currency">$</span></sup>
+                              <span class="price"> 81 </span>
+                              <span class="subscription"> /Annual </span>
+                           </div>
+                           <div class="monthly_price">
+                              <sup><span class="currency">$</span></sup>
+                              <span class="price"> 09 </span>
+                              <span class="subscription"> /Monthly </span>
+                           </div>
+                        </div>
+                        <div class="pricing-content">
+                           <ul>
+                              <li>10GB Space</li>
+                              <li>1 Free Domain</li>
+                              <li>300GB SSD Disk</li>
+                              <li>Special Offers</li>
+                              <li>Unlimited Support</li>
+                           </ul>
+                           <a class="pricing-btn blue-btn" href="#">Select Plan</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-12 col-xs-12 ">
+                     <div class="single-pricing-table">
+                     <h2>ENTERPRISE</h2>
+                        <img src="{{asset('assets/img/pricing-icon/informasi.svg')}}" alt="pricing-icon">
+                        <div class="pricing-amount">
+                           <div class="annual_price">
+                              <sup><span class="currency">$</span></sup>
+                              <span class="price"> 199 </span>
+                              <span class="subscription"> /Annual </span>
+                           </div>
+                           <div class="monthly_price">
+                              <sup><span class="currency">$</span></sup>
+                              <span class="price"> 99 </span>
+                              <span class="subscription"> /Monthly </span>
+                           </div>
+                        </div>
+                        <div class="pricing-content">
+                           <ul>
+                              <li>10GB Space</li>
+                              <li>1 Free Domain</li>
+                              <li>300GB SSD Disk</li>
+                              <li>Special Offers</li>
+                              <li>Unlimited Support</li>
+                           </ul>
+                           <a class="pricing-btn blue-btn" href="#">Select Plan</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+</section>
+<!--TABEL HARGA END -->
+
+<!--HOSTING PLAN AREA-->
+<section class="hosting-plan-area">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title">
-                        <h2> <span>Slake</span> Shared Hosting Plan </h2>
+                        <h2> <span>Perbandingan</span> Paket Web Hosting</h2>
                         <img src="{{asset('assets/img/section-shape.png')}}" alt="section-shape">
                         <p>Lorem ipsum dolor sittem ametamngcing elit, per sed do eiusmoad teimpor sittemelit inuning ut sed sittem do eiusmod.</p>
                     </div>
@@ -138,9 +284,7 @@
 
 
 
-
-
-    <!-- FAQ AREA -->
+<!-- FAQ AREA -->
     <div id="faq-area" class=" section-padding faq-area">
         <div class="container">
             <div class="row">
