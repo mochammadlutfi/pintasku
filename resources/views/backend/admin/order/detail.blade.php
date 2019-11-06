@@ -44,7 +44,7 @@
                         </tr>
                         <tr>
                             <td>Total</td>
-                            <td>{{ $order->total }}</td>
+                            <td>Rp {{ number_format($order->total,0,",",".") }},-</td>
                         </tr>
                         <tr>
                             <td>Invoice</td>
@@ -68,13 +68,13 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <table class="table">
+                    <table class="table table-vcenter">
                         <thead>
-                            <tr>
-                                <td>Tipe</td>
-                                <td>Deskripsi</td>
-                                <td>Durasi</td>
-                                <td>Harga</td>
+                            <tr class="thead-light">
+                                <th>Tipe</th>
+                                <th>Deskripsi</th>
+                                <th>Durasi</th>
+                                <th>Harga</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -90,7 +90,7 @@
                                     {{ $i->durasi }}
                                 </td>
                                 <td>
-                                    {{ $i->jumlah }}
+                                        Rp {{ number_format($i->jumlah,0,",",".") }},-
                                 </td>
                             </tr>
                             @endforeach
@@ -99,7 +99,7 @@
                                     <td colspan="3" class="text-right">
                                         Total
                                     </td>
-                                    <td>{{ $order->total }}</td>
+                                    <td>Rp {{ number_format($invoice->total,0,",",".") }},-</td>
                                 </tr>
                             </tfoot>
                         </tbody>

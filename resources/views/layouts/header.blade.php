@@ -6,14 +6,12 @@
                     <ul>
                         <li>
                             <select name="name" id="option">
-                            <option value="Eng">Eng</option>
-                            <option value="Eng">Bn</option>
-                            <option value="Eng">Gn</option>
-                            <option value="Eng">Sd</option>
-                        </select>
+                                <option value="id">ID</option>
+                                <option value="en">EN</option>
+                            </select>
                         </li>
-                        <li> <a href="tel:+8801711991383"> <span class="ti-headphone-alt"></span>+8801711991383</a> </li>
-                        <li> <a href="mailto:company@gmail.com"> <span class="ti-email"></span>company@mail.com</a> </li>
+                        <li> <a href="tel:+6287822253903"> <span class="ti-headphone-alt"></span>+62 878-2225-3903</a> </li>
+                        <li> <a href="mailto:mai@pintasku.com"> <span class="ti-email"></span>mail@pintasku.com</a> </li>
                     </ul>
                 </div>
             </div>

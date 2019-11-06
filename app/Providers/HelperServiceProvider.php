@@ -14,6 +14,8 @@ class HelperServiceProvider extends ServiceProvider
     public function register()
     {
         require_once app_path() . '/Helpers/InvoiceHelper.php';
+        require_once app_path() . '/Helpers/LicenseHelp.php';
+        require_once app_path() . '/Helpers/GeneralHelp.php';
     }
 
     /**

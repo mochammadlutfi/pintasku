@@ -2,13 +2,13 @@
     <li>
         <a class="{{ Request::is('beranda') ? 'active' : null }}" href="{{ route('beranda') }}"><i class="si si-cup"></i><span class="sidebar-mini-hide">Beranda</span></a>
     </li>
-    <li class="{{ Request::is('produk/*') ? 'open' : null }}">
+    <li class="{{ Request::is('produk/*', 'order/*', 'order') ? 'open' : null }}">
         <a class="nav-submenu" data-toggle="nav-submenu" href="#">
             <i class="si si-handbag"></i>
             <span class="sidebar-mini-hide">Produk / Layanan</span></a>
         <ul>
             <li>
-                <a class="{{ Request::is('produk/order', 'produk/order/*') ? 'active' : null}}"
+                <a class="{{ Request::is('order', 'order/*') ? 'active' : null}}"
                     href="{{ route('order') }}">Order Produk / Layanan</a>
             </li>
             <li>

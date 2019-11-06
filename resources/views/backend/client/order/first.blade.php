@@ -68,10 +68,10 @@
                                     <i class="fa fa-fw fa-th-large mr-5"></i> Semua
                                 </a>
                             </li>
-                            @foreach($webdev as $w)
+                            @foreach($cat_webdev as $cw)
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-category-link="categori-{{ $w->category_id}}">
-                                    <i class="fa fa-fw fa-briefcase mr-5"></i> {{ $w->category->name }}
+                                <a class="nav-link" href="#" data-category-link="categori-{{ $cw->id}}">
+                                    <i class="fa fa-fw fa-briefcase mr-5"></i> {{ $cw->name }}
                                 </a>
                             </li>
                             @endforeach
@@ -119,7 +119,37 @@
 
             </div>
             <div class="tab-pane" id="web-application" role="tabpanel">
-
+                <div class="row">
+                    @foreach($web_app as $wa)
+                    <div class="col-lg-4">
+                        <div class="block block-rounded block-bordered">
+                            <div class="block-content p-0 overflow-hidden">
+                                <a class="img-link" href="be_pages_real_estate_listing.html">
+                                    <img class="img-fluid rounded-top" src="{{ asset('assets/img/placeholder/590x300.jpg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="block-content border-bottom">
+                                <h4 class="font-size-h5 mb-10">{{ $wa->name }}</h4>
+                                <p class="text-muted">
+                                    Rp. {{ number_format($h->harga->sekali,0,",",".") }}
+                                </p>
+                            </div>
+                            <div class="block-content block-content-full">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <form action="{{ route('order') }}" method="post">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{ $wa->id }}">
+                                            <input type="hidden" name="tipe" value="{{ $wa->tipe }}">
+                                            <button type="submit" class="btn btn-sm btn-hero btn-noborder btn-primary btn-block">Beli Sekarang</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

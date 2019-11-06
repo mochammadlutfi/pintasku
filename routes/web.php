@@ -1,13 +1,29 @@
 <?php
+// use Carbon;
+
+use App\Helpers\LicenseHelp;
+
 Route::get('coba',function(){
 
-    // Creating default configured client
-    $whois = Whois::create();
+    // $data = [
+    //     'username' => 'coba',
+    //     'domain'   => 'dicobacoba1231.com',
+    //     'plan' => 'pintasku_Jenaka',
+    // ];
 
+    // $list_accounts = CpanelWhm::createacct($data);
+
+    // $username = 'coba';
+    // $list_accounts = CpanelWhm::create_user_session($username);
+	// $coba = json_decode($list_accounts);
+    dd(LicenseHelp::generate_code());
+    // Creating default configured client
+    // $whois = Whois::create();
+    // dd(\Carbon\Carbon::now()->addYear(1)->format('Y-m-d'));
     // Checking availability
-    if ($whois->isDomainAvailable("makaroniaku.com")) {
-        print "Bingo! Domain is available! :)";
-    }
+    // if ($whois->isDomainAvailable("makaroniaku.com")) {
+    //     print "Bingo! Domain is available! :)";
+    // }
 
     // // Supports Unicode (converts to punycode)
     // if ($whois->isDomainAvailable("почта.рф")) {
@@ -28,7 +44,7 @@ Route::get('coba',function(){
 });
 
 /* --------------------- Common/User Routes START -------------------------------- */
-
+Route::get('lang/{locale}', 'LocalizationController@index');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about-us', 'AboutController@index')->name('about');
 Route::get('/products', 'ProductController@index')->name('product');

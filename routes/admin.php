@@ -35,6 +35,21 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::match(['get', 'post'], '/tambah', 'ClientController@tambah')->name('client.tambah');
     });
 
+    Route::group(['prefix' => 'lisensi'], function(){
+        Route::get('/list', 'LicenseController@index')->name('license.list');
+        Route::get('/detail/{id}', 'LicenseController@detail')->name('license.detail');
+        Route::match(['get', 'post'], '/tambah', 'LicenseController@tambah')->name('license.tambah');
+
+        Route::group(['prefix' => 'tipe'], function(){
+            Route::get('/', 'LicenseTipeController@index')->name('license_tipe');
+            Route::post('/simpan','LicenseTipeController@simpan')->name('license_tipe.simpan');
+            Route::get('/edit/{id}','LicenseTipeController@edit')->name('license_tipe.edit');
+            Route::post('/update','LicenseTipeController@update')->name('license_tipe.update');
+            Route::get('/hapus/{id}','LicenseTipeController@hapus')->name('license_tipe.hapus');
+        });
+    });
+
+
     Route::get('/domains', 'DomainController@index')->name('domain');
 
     Route::group(['prefix' => 'order'], function(){
@@ -82,6 +97,12 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::group(['prefix' => 'invoice'], function(){
             Route::get('/', 'InvoiceController@index')->name('invoice');
             Route::get('/detail/{id}','InvoiceController@detail')->name('invoice.detail');
+            Route::post('/pembayaran','InvoiceController@pembayaran')->name('invoice.pembayaran');
+        });
+
+        Route::group(['prefix' => 'transaksi'], function(){
+            Route::get('/', 'TransaksiController@index')->name('transaksi');
+            Route::get('/detail/{id}','TransaksiController@detail')->name('transaksi.detail');
         });
 
 

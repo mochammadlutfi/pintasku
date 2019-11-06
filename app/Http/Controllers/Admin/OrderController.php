@@ -153,7 +153,7 @@ class OrderController extends Controller
                                 'invoice_id' => $invoice->id,
                                 'user_id' => $request->get('client'),
                                 'tipe' => $row->attributes->tipe,
-                                'deskripsi' => $row->attributes->tipe. ' - ' .$row->name,
+                                'deskripsi' =>$row->name,
                                 'jumlah' => $row->price,
                                 'durasi' => $row->attributes->bill_cycles,
                             );
@@ -161,6 +161,7 @@ class OrderController extends Controller
                         }
                         return response()->json([
                             'fail' => false,
+                            'url' => route('admin.order.detail', $order->id),
                         ]);
                     }
                 }
@@ -168,10 +169,6 @@ class OrderController extends Controller
         }
     }
 
-<<<<<<< Updated upstream
-
-
-=======
     public function detail($id){
 
         $order = Order::find($id);
@@ -237,28 +234,8 @@ class OrderController extends Controller
                 'tipe' => $tipe,
             ),
         ));
-        $output = '<table class="table table-bordered" id="ringkasan_order"><tbody>';
-            foreach(Cart::getContent() as $row)
-            {
-                $output .= '<tr class="produk">
-                <td colspan="2" class="text-left">
-                    <div class="h4 mb-0">
-                        '. $row->name .'
-                        <button type="button" class="btn btn-alt-danger btn-sm float-right" onclick="hapus_cart('. $row->id .')">
-                            <i class="si si-trash"></i>
-                        </button>
-                    </div>
-                    '. ($row->attributes->has('bill_cycles') ? ucwords($row->attributes->bill_cycles) : '') .'
-                    <div class="h5 text-right mb-0">
-                    Rp '.number_format($row->price,0,",",".") .',-
-                    </div>
-                </td>
-            </tr>';
-            }
-        $output .= '<tr class="subtotal"><td width="30%">Subtotal</td><td class="text-right">Rp '. number_format(Cart::getSubTotal(0),0,",",".") .',-</td></tr>';
-        $output .= '<tr class="h4 total"><td width="30%">Total</td><td class="text-right">Rp '. number_format(Cart::getTotal(0),0,",",".") .',-</td></tr>';
-        $output .= '</tbody></table>';
-        echo $output;
+
+        echo $this->get_chart();
     }
 
     public function remove_cart($id)
@@ -315,34 +292,26 @@ class OrderController extends Controller
         {
             $harga  = $data->harga->tahunan;
         }
+
+        if($data->tipe == 'hosting')
+        {
+            $tipe = 'Hosting';
+        }elseif($data->tipe == 'webdev')
+        {
+            $tipe = 'Web Development';
+        }elseif($data->tipe == 'webapp')
+        {
+            $tipe = 'Web Application';
+        }
         Cart::update(11 . $value, array(
             'price' => $harga,
             'attributes' => array(
                 'bill_cycles' => $request->get('bill_cycles'),
+                'tipe' => $tipe,
             ),
           ));
-        $output = '<table class="table table-bordered" id="ringkasan_order"><tbody>';
-            foreach(Cart::getContent() as $row)
-            {
-                $output .= '<tr class="produk">
-                <td colspan="2" class="text-left">
-                    <div class="h4 mb-0">
-                        '. $row->name .'
-                        <button type="button" class="btn btn-alt-danger btn-sm float-right" onclick="hapus_cart('. $row->id .')">
-                            <i class="si si-trash"></i>
-                        </button>
-                    </div>
-                    '. ($row->attributes->has('bill_cycles') ? ucwords($row->attributes->bill_cycles) : '') .'
-                    <div class="h5 text-right mb-0">
-                    Rp '.number_format($row->price,0,",",".") .',-
-                    </div>
-                </td>
-            </tr>';
-            }
-        $output .= '<tr class="subtotal"><td width="30%">Subtotal</td><td class="text-right">Rp '. number_format(Cart::getSubTotal(0),0,",",".") .',-</td></tr>';
-        $output .= '<tr class="h4 total"><td width="30%">Total</td><td class="text-right">Rp '. number_format(Cart::getTotal(0),0,",",".") .',-</td></tr>';
-        $output .= '</tbody></table>';
-        echo $output;
+
+        echo $this->get_chart();
     }
 
     public function add_domain(Request $request)
@@ -373,32 +342,52 @@ class OrderController extends Controller
                 ),
             ));
 
-            $output = '<table class="table table-bordered" id="ringkasan_order"><tbody>';
-            // dd(Cart::getContent());
-                foreach(Cart::getContent() as $row)
-                {
-                    $output .= '<tr class="produk">
-                    <td colspan="2" class="text-left">
-                        <div class="h4 mb-0">
-                            '. $row->name .'
-                            <button type="button" class="btn btn-alt-danger btn-sm float-right" onclick="hapus_cart('. $row->id .')">
-                                <i class="si si-trash"></i>
-                            </button>
-                        </div>
-                        '. ($row->attributes->has('bill_cycles') ? ucwords($row->attributes->bill_cycles) : '') .'
-                        <div class="h5 text-right mb-0">
-                        Rp '.number_format($row->price,0,",",".") .',-
-                        </div>
-                    </td>
-                </tr>';
-                }
-            $output .= '<tr class="subtotal"><td width="30%">Subtotal</td><td class="text-right">Rp '. number_format(Cart::getSubTotal(0),0,",",".") .',-</td></tr>';
-            $output .= '<tr class="h4 total"><td width="30%">Total</td><td class="text-right">Rp '. number_format(Cart::getTotal(0),0,",",".") .',-</td></tr>';
-            $output .= '</tbody></table>';
-            echo $output;
+            echo $this->get_chart();
         }else{
+            $output = '<div class="alert alert-danger alert-dismissable" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <p class="mb-0 text-center">Maaf Domain Pintasku.com Sudah Digunakan. Silahkan Gunakan Domain Lain!</p>
+                        </div>';
+            $output.= $this->get_chart();
+
+            echo $output;
         }
     }
->>>>>>> Stashed changes
+
+
+
+    public function get_chart()
+    {
+        $output = '<table class="table table-bordered" id="ringkasan_order"><tbody>';
+            foreach(Cart::getContent() as $row)
+            {
+                $output .= '<tr class="produk">
+                <td colspan="2" class="text-left">
+                    <div class="h4 mb-0">
+                        '. ($row->attributes->has('tipe') ? ucwords($row->attributes->tipe) : '') .'
+                        <button type="button" class="btn btn-alt-danger btn-sm float-right" onclick="hapus_cart('. $row->id .')">
+                            <i class="si si-trash"></i>
+                        </button>
+                    </div>
+                    '. $row->name .'
+                    <div class="h5 mb-0">
+                        <span class="text-left">
+                            '.($row->attributes->has('bill_cycles') ? ucwords($row->attributes->bill_cycles) : '').'
+                        </span>
+                        <span class="float-right text-right">
+
+                            Rp '.number_format($row->price,0,",",".") .',-
+                        </span>
+                    </div>
+                </td>
+            </tr>';
+            }
+        $output .= '<tr class="subtotal"><td width="30%">Subtotal</td><td class="text-right">Rp '. number_format(Cart::getSubTotal(0),0,",",".") .',-</td></tr>';
+        $output .= '<tr class="h4 total"><td width="30%">Total</td><td class="text-right">Rp '. number_format(Cart::getTotal(0),0,",",".") .',-</td></tr>';
+        $output .= '</tbody></table>';
+        return $output;
+    }
 
 }

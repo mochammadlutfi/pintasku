@@ -6,9 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Invoice extends Model
 {
-<<<<<<< Updated upstream
-    //
-=======
     protected $table = 'invoices';
     protected $primaryKey = 'id';
 
@@ -20,5 +17,9 @@ class Invoice extends Model
     {
         return $this->belongsTo('App\User', 'user_id', 'id');
     }
->>>>>>> Stashed changes
+
+    public function itemnya()
+    {
+        // return $this->hasMany('App\Models\InvoiceItem', 'invoice_id', 'id');
+    }
 }

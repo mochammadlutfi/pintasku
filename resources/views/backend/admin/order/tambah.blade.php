@@ -49,7 +49,7 @@
                                     <div class="col-lg-9">
                                         <select class="form-control" name="metode_pembayaran" id="field-metode_pembayaran">
                                             <option value="">Pilih</option>
-                                            <option value="transfer">Bank Transfer</option>
+                                            <option value="Bank Transfer">Bank Transfer</option>
                                         </select>
                                     </div>
                                 </div>
@@ -97,7 +97,6 @@
                                         <div class="invalid-feedback" id="error-domain_produk">Invalid feedback</div>
                                     </div>
                                 </div>
-
                                 <div class="form-group row">
                                     <label class="col-lg-3" for="field-bill_cycles">Durasi Paket</label>
                                     <div class="col-lg-9">
@@ -133,11 +132,7 @@
                                         </div>
                                     </div>
                                 </div>
-<<<<<<< Updated upstream
-                                <div class="form-group row" id="kol-domain">
-=======
                                 <div class="form-group row" id="kol-domain_tld" style="display:none;">
->>>>>>> Stashed changes
                                     <label class="col-lg-3" for="field-domain">Domain</label>
                                     <div class="col-lg-9">
                                         <input type="text" class="form-control" name="domain_name" id="field-domain_name">
@@ -436,7 +431,7 @@ function hapus_cart(id){
                     allowOutsideClick: false
                 });
                 $('#ringkasan_order').replaceWith(data);
-
+                $("#form-order").trigger("reset");
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 alert('Error deleting data');

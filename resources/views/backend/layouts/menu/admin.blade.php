@@ -34,6 +34,24 @@
             </li>
         </ul>
     </li>
+    <li class="{{ Request::is('admin/lisensi/*') ? 'open' : null }}">
+        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-key"></i><span
+                class="sidebar-mini-hide">Lisensi</span></a>
+        <ul>
+            <li>
+                <a class="{{ Request::is('admin/license/tambah') ? 'active' : null }}"
+                    href="{{ route('admin.license.tambah') }}">Tambah Lisensi Baru</a>
+            </li>
+            <li>
+                <a class="{{ Request::is('admin/license/list') ? 'active' : null }}"
+                    href="{{ route('admin.license.list') }}">Data Lisensi</a>
+            </li>
+            <li>
+                <a class="{{ Request::is('admin/license/tipe') ? 'active' : null }}"
+                    href="{{ route('admin.license_tipe') }}">Tipe Lisensi</a>
+            </li>
+        </ul>
+    </li>
     <li class="{{ Request::is('admin/order/*') ? 'open' : null }}">
         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-briefcase"></i><span
                 class="sidebar-mini-hide">Order</span></a>
@@ -54,7 +72,7 @@
         <ul>
             <li>
                 <a class="{{ Request::is('admin/billing/transaksi') ? 'active' : null}}"
-                    href="{{ route('admin.product.tambah') }}">Data Transaksi</a>
+                    href="{{ route('admin.transaksi') }}">Data Transaksi</a>
             </li>
             <li>
                 <a class="{{ Request::is('admin/billing/invoice') ? 'active' : null}}"

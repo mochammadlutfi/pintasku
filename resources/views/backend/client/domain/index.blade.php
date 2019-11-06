@@ -18,7 +18,7 @@
                     </a>
                 </div>
                 <div class="block-content">
-                    <table class="table table-hover table-striped" id="list-kategori">
+                    <table class="table table-hover table-striped" id="list-domain">
                         <thead>
                             <tr>
                                 <th>Domain</th>
@@ -26,7 +26,6 @@
                                 <th>Tgl Tempo</th>
                                 <th>Perbaharui Otomatis</th>
                                 <th>Status</th>
-                                <th></th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -39,4 +38,41 @@
 </div>
 @stop
 @push('scripts')
+<script>
+$(function () {
+    $('#list-domain').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('domain') }}",
+        columns: [
+            {
+                data: 'domain',
+                name: 'domain'
+            },
+            {
+                data: 'tgl',
+                name: 'tgl'
+            },
+            {
+                data: 'tempo',
+                name: 'tempo'
+            },
+            {
+                data: 'perbaharui',
+                name: 'perbaharui'
+            },
+            {
+                data: 'status',
+                name: 'status'
+            },
+        ]
+    });
+});
+
+function detail(id) {
+    var url = '{{ route("invoice.detail", ":id") }}';
+    url = url.replace(':id', id);
+    document.location.href=url;
+}
+</script>
 @endpush

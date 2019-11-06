@@ -39,7 +39,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function provinsi()
     {
-        return $this->belongsTo('App\Models\Provinsi', 'province_id', 'id');
+        return $this->belongsTo('App\Models\Provinsi', 'provinsi_id', 'id');
     }
 
     public function kota()

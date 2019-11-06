@@ -6,7 +6,7 @@ use App\Helpers\InvoiceHelp;
 use App\User;
 use App\Models\Invoice;
 use App\Models\InvoiceItem;
-use App\Models\Order;
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -75,5 +75,40 @@ class InvoiceController extends Controller
         $item = InvoiceItem::where('invoice_id', $invoice->id)->latest()->get();
 
         return view('backend.admin.invoice.detail', compact('invoice', 'item'));
+    }
+
+    public function pembayaran(Request $request)
+    {
+        $rules = [
+            'pay_tgl' => 'required',
+            'pay_jumlah' => 'required',
+            'pay_metode' => 'required',
+        ];
+
+        $pesan = [
+            'pay_tgl.required' => 'Tanggal Pembayaran Wajib Diisi!',
+            'pay_jumlah.required' => 'Jumlah Pembayaran Wajib Diisi!',
+            'pay_metode.required' => 'Metode Pembayaran Wajib Diisi!',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $pesan);
+        if ($validator->fails()){
+            return response()->json([
+                'fail' => true,
+                'errors' => $validator->errors()
+            ]);
+        }else{
+            $data = new Transaksi();
+            $data->invoice_id = $request->invoice_id;
+            $data->tgl_bayar = date('Y-m-d', strtotime($request->pay_tgl));
+            $data->metode = $request->pay_metode;
+            $data->jumlah = $request->pay_jumlah;
+            if($data->save())
+            {
+                return response()->json([
+                    'fail' => false,
+                ]);
+            }
+        }
     }
 }

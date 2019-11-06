@@ -234,7 +234,8 @@ return [
          * Helper Class Providers...
          */
         'InvoiceHelp' => App\Helpers\InvoiceHelper::class,
-
+        'LicenseHelp' => App\Helpers\LicenseHelp::class,
+        'GeneralHelp' => App\Helpers\GeneralHelp::class,
         /*
          * Package Class Providers...
          */

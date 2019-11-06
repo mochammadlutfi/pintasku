@@ -7,7 +7,7 @@
         <!-- Stylesheets -->
 
         <!-- Page JS Plugins CSS -->
-        {{-- <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css') }}"> --}}
+
         {{-- <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/slick/slick.css') }}"> --}}
         {{-- <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/slick/slick-theme.css') }}"> --}}
         <link rel="stylesheet" href="{{ asset('assets/backend/js/plugins/datatables/dataTables.bootstrap4.css') }}">
@@ -70,8 +70,6 @@
         <script src="{{ asset('assets/backend/js/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js') }}"></script>
         <script src="{{ asset('assets/backend/js/plugins/select2/js/select2.full.min.js') }}"></script>
         <script src="{{ asset('assets/backend/js/plugins/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
-        <script src="{{ asset('assets/backend/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
-        <script src="{{ asset('assets/backend/js/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.id.min.js') }}"></script>
         <script src="{{ asset('assets/backend/js/plugins/chartjs/Chart.bundle.min.js') }}"></script>
         <script src="{{ asset('assets/backend/js/plugins/slick/slick.min.js') }}"></script>
         <script src="{{ asset('assets/backend/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>

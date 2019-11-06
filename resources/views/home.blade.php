@@ -7,43 +7,28 @@
 <!--/ End Slider Inner -->
 
 <!--CEK DOMAIN-->
-<section class="domain-area ">
+<section class="domain-area">
     <div class="container domain-inner">
         <h3 class="domain-head">Looking for domain name?</h3>
         <div class="row domain-checkup">
-            <form id="digita-contact-form" action="{{asset('assets/php/contact-mail.php')}}" method="POST">
+            <form id="form-domain_check" method="POST" onsubmit="return false;">
                 <div class="domain-checkup-left">
                     <div class="input-field-row">
                         <input type="text" class="domain-input" placeholder="Enter your domain here">
                         <select class="nice-select" name="option">
-                            <option value="">.com</option>
-                            <option value="">.net</option>
-                            <option value="">.net</option>
-                            <option value="">.net</option>
-                            <option value="">.net</option>
+                            @foreach($tld as $t)
+                                <option value="">{{ $t->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="domain-checkup-right">
                     <button>
-                        
                         <img src="{{asset('assets/img/icons/search-icon.png')}}" alt="Search icon">
                         Search
                     </button>
                 </div>
             </form>
-        </div>
-        <div class="row">
-            <div class="domain-tld-prices">
-                <ul>
-                    <li>.com $9.00</li>
-                    <li>.net $9.50</li>
-                    <li>.org $9.50</li>
-                    <li>.us $6.99</li>
-                    <li>.biz $9.99</li>
-                    <li>.me $7.50</li>
-                </ul>
-            </div>
         </div>
     </div>
 </section>
@@ -87,8 +72,6 @@
 </div>
 </section>
 <!-- KENAPA PINTASKU  END-->
-
-
 
 <!-- SERVICE -->
 <section class="homepage-2 blog-2-area">
@@ -134,7 +117,7 @@
                 <p>Lorem ipsum dolor sittem ametam ngcing elit, per sed do eiusmoad tepor inunt ut sedig do eiusmod.</p>
                 <a href="#" class="read-more-btn">read more <i class="ti-arrow-right"></i></a>
             </div>
-        </div>  
+        </div>
     </div>
 </section>
 <!-- SERVICE  END-->
@@ -168,7 +151,7 @@
         <div class="col-lg-12">
         <div class="brand-inner">
                 <div class="owl-carousel all-brand-carsouel">
-                    
+
                     <div class="brand-single-item">
                     <div class="brand-single-item-cell">
                         <img src="{{asset('assets/img/brand-logo/vuejs.png')}}" alt="brand-icon">
@@ -213,8 +196,8 @@
             </div>
         </div>
     </div>
-    
-            
+
+
     </div>
 </section>
 <!--BRANDE AREA END -->

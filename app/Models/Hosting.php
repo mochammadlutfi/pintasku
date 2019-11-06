@@ -6,14 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hosting extends Model
 {
-<<<<<<< Updated upstream
-    //
-=======
-    protected $table = 'harga';
+    protected $table = 'hosting';
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'tipe', 'product_id', 'bulanan', 'triwulan', 'caturwulan', 'semester', 'tahunan', 'sekali'
+        'order_id', 'tipe', 'product_id', 'bulanan', 'triwulan', 'caturwulan', 'semester', 'tahunan', 'sekali'
     ];
->>>>>>> Stashed changes
+
+    public function produk()
+    {
+        return $this->belongsTo('App\Models\Product', 'product_id', 'id');
+    }
+
+    public function order()
+    {
+        return $this->belongsTo('App\Models\Order', 'order_id', 'id');
+    }
 }
